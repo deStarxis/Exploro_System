@@ -1,0 +1,30 @@
+{% extends 'Room_table.html' %}
+ {% block content %}
+     <form action="/adminpage/room_update/{{ room.Room_ID }}/" method="post" enctype="multipart/form-data" id="room_form">
+{# <form action="/adminpage/customer_update/{{ customer.ID }}/" method="post" enctype="multipart/form-data">#}
+
+         {% csrf_token %}
+        {% load static %}
+        <img width="100px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}">
+         <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
+         <label>Room Type</label><select name="Room_Type" type="text" >{{ room.Room_Type }}</select>
+           <label>Location</label><input name="Location"  type="text" value={{ room.Location }} >
+           <label>Price</label><input name="Price" type="text" value={{ room.Price }} >
+         <label>Description</label><input name="Description" type="text" value="{{ room.Description }}">
+                <button type="submit" id="submitbutton" >
+{#                     {% load static %}#}
+{#                    <img src={% static 'images/Database Icon.png' %}>#}
+                    Submit</button>
+         <button type="reset" id="resetbutton">
+{#              {% load static %}#}
+{#                    <img src={% static 'used_images/Reset.jpg' %}>#}
+                    Reset</button>
+                <button id="listButton" type="button"><a href="{% url 'room_table' %}">
+{#                    {% load static %}#}
+{#                    <img src={% static 'used_images/List.png' %}>#}
+                    Back To Table
+                </a></button>
+            </div>
+        </div>
+     </form>
+ {% endblock content %}

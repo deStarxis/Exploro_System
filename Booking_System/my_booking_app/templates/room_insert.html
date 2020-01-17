@@ -1,0 +1,27 @@
+ {% extends 'Room_table.html' %}
+ {% block content %}
+     {% load static %}
+     <form action="" method="post" enctype="multipart/form-data" id="room_form" style="background-image: url({% static 'images/admin_images/room_form.jpg' %})">
+         {% csrf_token %}
+            <label>Room Image</label>{{ formr.Room_Image }}
+            <label>Room Type</label>{{formr.Room_Type }}
+            <label>Location</label>{{ formr.Location }}
+            <label>Price</label>{{ formr.Price }}
+            <label>Description</label>{{ formr.Description }}
+                <button type="submit" id="submitbutton">
+{#                     {% load static %}#}
+{#                    <img src={% static 'used_images/Database Icon.png' %}>#}
+                    Submit</button>
+         <button type="reset" id="resetbutton">
+{#              {% load static %}#}
+{#                    <img src={% static 'used_images/Reset.jpg' %}>#}
+                    Reset</button>
+                <button id="listButton" type="button"><a href="{% url 'room_table' %}">
+{#                    {% load static %}#}
+{#                    <img src={% static 'used_images/List.png' %}>#}
+                    Back To Table
+                </a></button>
+            </div>
+        </div>
+     </form>
+ {% endblock content %}

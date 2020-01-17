@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        exploro.com.np
+    </title>
+    <link rel="icon" href="{% static 'images/ICON_TITLE.jpg' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" href="images/ICON_TITLE.jpg">
+    <link href={% static 'css/style.css' %} type="text/css" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/8bc8d54818.js"></script>
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}" class="logo"><img src="{% static 'images/Logo.jpg' %}" title="exploro"></a>
+        <div id="header-nav">
+            <a href={% url 'index' %}>Home</a>
+            <a href={% url 'room' %}>Rooms</a>
+            <a href={% url 'help' %}>Help</a>
+            <a href={% url 'about' %}>About</a>
+            <input type="submit" value="Logout" onclick="openForm()">
+        </div>
+    </div>
+    <div id="admin_content">
+       <div id="sidebar">
+           <h3 style="font-size: xx-large"><a href="{% url 'admin_page' %}">Records</a></h3>
+          <a  class="customer" href="{% url 'customer_table' %}">Customer</a>
+          <a class="room"href="{% url 'room_table' %}">Rooms</a>
+          <a class="booking"href="{% url 'booking_table' %}">Bookings</a>
+          <a class="contact"href="#about">Contact</a>
+       </div>
+        <div id="admin_body">
+        {% block content %}
+
+        {% endblock %}
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer_nav">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div id="footer_content">
+            <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
+        </div>
+         <div id="footer_icon">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a>
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}">
+    </script>
+</body>
+</html>

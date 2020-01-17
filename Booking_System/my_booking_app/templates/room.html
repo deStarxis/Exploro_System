@@ -1,0 +1,22 @@
+{% extends 'pagelayout.html' %}
+{% load static %}
+{% block content %}
+    <div id="find_room">
+     <input type="text" id=type_room placeholder="Search Room By Type">
+     <button id="find_your_room">Search</button>
+    </div>
+    <div id="room_container">
+        {% for room in room_list %}
+        <div id="room_description">
+            <h1>{{ room.Room_Type }}</h1>
+            <p>{{ room.Location }}</p>
+            <p>{{ room.Price }}</p>
+            <p>{{ room.Description }}</p>
+        <button type="submit">Book Now</button>
+        </div>
+            <div id="room_image">
+            <img src="{% static 'images/admin_images/room_images/' %}{{ room.Room_Image }}" width="50%" height="auto" style="border-radius: 5px">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

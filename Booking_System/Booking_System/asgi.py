@@ -1,5 +1,5 @@
 """
-ASGI config for Exploro_System project.
+ASGI config for Booking_System project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Exploro_System.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Booking_System.settings')
 
 application = get_asgi_application()

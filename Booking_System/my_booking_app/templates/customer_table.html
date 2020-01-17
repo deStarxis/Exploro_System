@@ -1,0 +1,60 @@
+{% extends "admin.html" %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<input type="text" id=searchbar_customer placeholder="Search Customer By Email">
+<button id="customer_search">Search</button>
+<table class="customer_table">
+    <tr class="table_head">
+        <td>ID</td>
+        <td>Full Name</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Mobile</td>
+    </tr>
+    {% for customer in customer_list %}
+    <tr>
+        <td>{{ customer.ID }}</td>
+        <td>{{customer.Fullname}}</td>
+        <td>{{customer.Email}}</td>
+        <td>{{customer.Password}}</td>
+        <td>{{ customer.Mobile }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    $(document).ready(() => {
+        $("#sidebar").find(".customer").removeClass("customer");
+        $("#customer_search").click(() => {
+            $.ajax({
+                data: {
+                    search: $("#searchbar_customer").val()
+                },
+                url: '/adminpage/customersearch',
+                method: 'GET',
+                success: function(data) {
+                    console.log(data)
+                    $("tr").not("tr:first").remove();
+                    let html = "";
+                    for (customer of data) {
+                        html += "<tr>";
+                        html += "<td>" + customer.ID + "</td>";
+                        html += "<td>" + customer.Fullname + "</td>";
+                        html += "<td>" + customer.Email + "</td>";
+                        html += "<td>" + customer.Password + "</td>";
+                        html += "<td>" + customer.Mobile + "</td>";
+                        html += "<td><a href='/edit/" + user.user_id + "'>edit</a> | <a href='/delete/" + user.user_id + "'>delete</a></td>";
+                        html += "</tr>";
+                        $(".customer_table").append(html);
+                    }
+                },
+                error: function(error) {
+                    console.log(error)
+                },
+                complete: function() {
+                    console.log("complete")
+                }
+            })
+        })
+    })
+</script>
+{% endblock %}
