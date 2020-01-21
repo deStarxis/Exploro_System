@@ -8,6 +8,9 @@ def index(request):
 def room(request):
     context = {'room_list': Room.objects.all()}
     return render(request, 'room.html',context)
+def customerdashboard(request,id):
+    customer = Customer.objects.get(ID=id)
+    return render(request, 'customer_dashboard.html', {'customer': customer})
 def about(request):
     return render(request, 'about.html')
 def help(request):
@@ -16,6 +19,16 @@ def privacy(request):
     return render(request, 'privacy.html')
 def admin(request):
     return render(request, 'admin.html')
+def logincheck(request):
+    username=request.POST["Email"]
+    password=request.POST["Password"]
+    if(username=="admin@gmail.com"):
+        if(password=="admin123"):
+            return render(request,'admin.html')
+    else:
+        customers=Customer.objects.get(Email=username,Password=password)
+        if(customers.Password==password):
+            return render(request,"customer_dashboard.html")
 # def customer_entry(request):
 #     request.session['Email']=request.POST['Email']
 #     request.session['Password']=request.POST['Password']
@@ -68,6 +81,13 @@ def room_delete(request,id):
 def booking_table(request):
     context={'booking_list':Booking.objects.all()}
     return render(request,'booking_table.html',context)
-
+def bookinginsert(request):
+    if request.method == "POST":
+        formb=Booking_Form(request.POST,request.FILES)
+        formb.save()
+        return redirect('room')
+    else:
+        formb=Booking_Form()
+    return render(request,"room.html",{'formb':formb})
 
 

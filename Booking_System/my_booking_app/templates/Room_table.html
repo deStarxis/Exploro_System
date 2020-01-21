@@ -1,7 +1,7 @@
 {% extends "admin.html" %}
 {% block content %}
-    <input type="text" id=searchbar_room placeholder="Search Room By Price">
-     <button id="room_search">Search</button>
+{#    <input type="text" id=searchbar_room placeholder="Search Room By Price">#}
+{#     <button id="room_search">Search</button>#}
 <table class="room_table" style="overflow: paged-y">
     <thead class="table_head">
         <tr>
@@ -46,46 +46,4 @@
         {% endfor %}
     </tbody>
 </table>
-{#<table class="booking_table">#}
-{#    <thead class="table_head">#}
-{#        <tr>#}
-{#            <td>ID</td>#}
-{#            <td>Full Name</td>#}
-{#            <td>Email</td>#}
-{#            <td>Password</td>#}
-{#            <td>Mobile</td>#}
-{#            <td class="adding_customer">#}
-{#                <a href="{% url 'customer_insert' %}">#}
-{#                     {% load static %}#}
-{#                        <img src="{% static 'used_images/User.png' %}" title="Adding new Customer">#}
-{#                </a>#}
-{#            </td>#}
-{#        </tr>#}
-{#    </thead>#}
-{#    <tbody>#}
-{#        {% for room in room_list %}#}
-{#            <tr>#}
-{#                <td>{{ customer.ID }}</td>#}
-{#                <td>{{customer.Fullname}}</td>#}
-{#                <td>{{customer.Email}}</td>#}
-{#                <td>{{customer.Password}}</td>#}
-{#                <td>{{ customer.Mobile }}</td>#}
-{#                <td>#}
-{#                    <a href="{% url 'customer_update' customer.ID %}" class="updating_customer">#}
-{#                        {% load static %}#}
-{#                        <img src="{% static 'used_images/Update.png' %}" title="Updating Customer Details">#}
-{#                    </a>#}
-{##}
-{#                    <form action="{% url 'customer_delete' customer.ID %}" method="post" >#}
-{#                        {% csrf_token %}#}
-{#                        <button type="submit" class="Deleting_Customer">#}
-{#                            {% load static %}#}
-{#                        <img src="{% static 'used_images/Delete.png' %}" title="Deleting Customer">#}
-{#                        </button>#}
-{#                    </form>#}
-{#                </td>#}
-{#            </tr>#}
-{#        {% endfor %}#}
-{#    </tbody>#}
-{#</table>#}
 {% endblock %}

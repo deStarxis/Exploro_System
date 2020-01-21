@@ -1,0 +1,28 @@
+ {% extends "index.html" %}
+{% load static %}
+{% block contentcustomer %}
+    <div id="customerdetails">
+    <table class="customer_table">
+       <thead class="table_head">
+       <tr>
+       <td>ID</td>
+       <td>FullName</td>
+       <td>Email</td>
+       <td>Mobile</td>
+       <td>Password</td>
+       </tr>
+       </thead>
+  <tbody>
+    <tr>
+{% for customers in customer %}
+        <td>{{ customer.ID }}</td>
+        <td>{{ customer.Fullname }}</td>
+        <td>{{ customer.Email }}</td>
+        <td>{{ customer.Mobile }}</td>
+        <td>{{ customer.Password }}</td>
+    {% endfor %}
+  </tr>
+    </tbody>
+      </table>
+    </div>
+{% endblock %}

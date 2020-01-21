@@ -26,7 +26,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../room_booking_system" />
+    <property name="last_opened_file_path" value="G:/film_booking_system" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -136,6 +136,18 @@
       <workItem from="1578985772276" duration="10408000" />
       <workItem from="1579248427409" duration="3496000" />
       <workItem from="1579253467433" duration="2257000" />
+      <workItem from="1579333471021" duration="10232000" />
+      <workItem from="1579353153208" duration="29000" />
+      <workItem from="1579410982636" duration="4865000" />
+      <workItem from="1579437175185" duration="3422000" />
+      <workItem from="1579483855957" duration="66000" />
+      <workItem from="1579483972740" duration="515000" />
+      <workItem from="1579484645306" duration="1718000" />
+      <workItem from="1579490340863" duration="2568000" />
+      <workItem from="1579497780513" duration="1143000" />
+      <workItem from="1579501958954" duration="3279000" />
+      <workItem from="1579513813362" duration="5056000" />
+      <workItem from="1579569135381" duration="1817000" />
     </task>
     <servers />
   </component>
@@ -143,17 +155,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578907671226">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579526916147">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1578907671226" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1578906347931">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1579526916147" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1579502407521">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1578906347931" />
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579253465935">
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579502407521" />
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579569150031">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579253465935" />
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579569150031" />
   </component>
 </project>

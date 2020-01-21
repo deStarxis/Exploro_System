@@ -5,23 +5,25 @@ function validateform(){
     var verify_password=document.signup_form.Verify_Password.value;
     var mobile=document.signup_form.Mobile.value;
 
-if (name==null || name==""){
+if (name==null || name===""){
   alert("Name can't be blank");
   return false;
 }
-if (email==null || email==""){
+if (email==null || email===""){
     alert("Email can't be blank");
     return  false;
+}
+if(mobile==null||mobile===""){
+    alert("Mobile number should be reigstered");
 }
 if(password.length<6){
   alert("Password must be at least 6 characters long.");
   return false;
   }
-if(verify_password==password){
+if(verify_password===password){
     return true;
 }
 else {
     alert("Password must be same.")
 }
-
 }

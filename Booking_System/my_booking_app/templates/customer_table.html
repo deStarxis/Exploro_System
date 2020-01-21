@@ -1,8 +1,9 @@
 {% extends "admin.html" %}
+{% load static %}
 {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<input type="text" id=searchbar_customer placeholder="Search Customer By Email">
-<button id="customer_search">Search</button>
+{#<script src="{% static 'js/jquery.min.js' %}"></script>#}
+{#<input type="text" id=searchbar_customer placeholder="Search Customer By Email">#}
+{#<button id="customer_search">Search</button>#}
 <table class="customer_table">
     <tr class="table_head">
         <td>ID</td>

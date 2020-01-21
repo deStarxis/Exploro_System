@@ -1,10 +1,12 @@
 {% extends 'pagelayout.html' %}
 {% load static %}
 {% block content %}
-    <div id="body_content" style="background: url({% static 'images/background/background_index.jpg' %})">
+    <div id="body_content" style="background: url({% static 'images/background/bell.jpg' %})">
         <div class="top_content">
             <img src="{% static 'images/Logo.png' %}" id="content_image">
             <p>Find your ideal hotel around the Kathmandu Valley over here.</p>
         </div>
     </div>
+    {% block contentcustomer %}
+        {% endblock %}
 {% endblock %}

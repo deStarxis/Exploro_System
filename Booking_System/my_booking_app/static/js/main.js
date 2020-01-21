@@ -1,11 +1,14 @@
 function openForm() {
     document.getElementById("form").style.display = "block";
 }
-
+function openBookingForm() {
+    document.getElementById("booking_form").style.display = "block";
+}
 // function closeForm() {
 //     document.getElementById("myForm").style.display = "none";
 // }
 // Get the modal
+var bookingModal = document.getElementById('booking_form');
 var modal = document.getElementById('form');
 var signup = document.getElementById('signup_modal');
 
@@ -16,8 +19,13 @@ window.onclick = function(event) {
         form.style.display = "none";
     } if (event.target == signup) {
         form.style.display = "none";
+    }if (event.target==bookingModal){
+        form.style.display="none";
     }
 }
 function opensignup() {
     document.getElementById("signup_modal").style.display = "block";
+}
+function closeform() {
+    document.close();
 }

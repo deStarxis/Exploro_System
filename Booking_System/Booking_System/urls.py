@@ -26,9 +26,11 @@ urlpatterns = [
     path('help/',views.help,name="help"),
     path('room/',views.room,name="room"),
     path('privacy/',views.privacy,name="privacy"),
-    # path('customer_login/',views.),
+    path('customer/<int:id>/',views.customerdashboard,name="customerdashboard"),
     # path('customer_entry/',views.customer_entry,name="customerentry"),
     path('customer_register/',views.customersignup,name="customersignup"),
+    path('booking/',views.bookinginsert,name="bookinginsert"),
+    path('loginvalidate/',views.logincheck,name="customerlogin"),
     path('adminpage/',views.admin,name="admin_page"),
     #customer
     path('adminpage/customer_record/',views.customer_table,name="customer_table"),
@@ -51,4 +53,4 @@ urlpatterns = [
     # path('adminpage/booking_delete/<int:id>/', views.booking_delete, name='booking_delete'),
     # path('adminpage/customer_list/', views.customer_list, name='customer_list')
 ]
-urlpatterns+=staticfiles_urlpatterns()
+urlpatterns+= staticfiles_urlpatterns()

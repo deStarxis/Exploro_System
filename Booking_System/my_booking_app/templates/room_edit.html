@@ -7,10 +7,13 @@
         {% load static %}
         <img width="100px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}">
          <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
-         <label>Room Type</label><select name="Room_Type" type="text" >{{ room.Room_Type }}</select>
-           <label>Location</label><input name="Location"  type="text" value={{ room.Location }} >
+         <label>Room Type</label>
+         <select>
+             <option value="{{ room.Room_Type }}">{{ room.Room_Type }}</option>
+         </select>
+         <label>Location</label><textarea name="Location">{{ room.Location }} </textarea>
            <label>Price</label><input name="Price" type="text" value={{ room.Price }} >
-         <label>Description</label><input name="Description" type="text" value="{{ room.Description }}">
+         <label>Description</label><textarea name="Description" style="height: 60px;">{{ room.Description }} </textarea>
                 <button type="submit" id="submitbutton" >
 {#                     {% load static %}#}
 {#                    <img src={% static 'images/Database Icon.png' %}>#}

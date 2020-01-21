@@ -24,7 +24,7 @@
         </div>
     </div>
     <div id="form" class="loginform">
-        <form class="loginform-content animate" action="" method="post">
+        <form class="loginform-content animate" action="{% url 'customerlogin' %}" method="post">
             {% csrf_token %}
             <div class="imgcontainer">
                 <!-- <span onclick="document.getElementById('form').style.display='none'" class="close" title="Close Modal">&times;</span> -->
@@ -38,7 +38,6 @@
                 <input type="password" placeholder="Enter Password" name="Password" value="{{ form.Password }}" required>
                 <span class="psw">Forgot <a href="#">password</a></span>
                 <button type="submit" id="Login">Login</button>
-                <button type="submit" id="Admin_Login">Login as Admin</button>
                 <label>
               <input type="checkbox" name="remember"> Remember me
                 </label><br>
@@ -83,10 +82,10 @@
             <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
         </div>
 
-        <div id="footer_icon">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>
+{#        <div id="footer_icon">#}
+{#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
+{#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
+{#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
         </div>
     <script src="{% static 'js/main.js' %}">
     </script>

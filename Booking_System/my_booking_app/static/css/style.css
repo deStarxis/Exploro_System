@@ -1,13 +1,13 @@
+/*all page*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+/*header navigation*/
 #header {
     overflow: hidden;
     background: whitesmoke;
@@ -17,8 +17,6 @@ body {
     height: 80px;
     width: 80px;
 }
-
-
 /* #header a {
     float: left;
     color: black;
@@ -26,11 +24,9 @@ body {
     text-decoration: none;
     font-size: 25px;
 } */
-
 #header-nav {
     float: right;
 }
-
 #header-nav a {
     float: left;
     font-size: 25px;
@@ -40,7 +36,6 @@ body {
     text-decoration: none;
     margin-top: 25px;
 }
-
 #header-nav a:hover {
     color: dodgerblue;
     cursor: pointer;
@@ -55,13 +50,11 @@ body {
     margin-top: 25px;
     background: dodgerblue;
 }
-
 #header-nav input:hover {
     background-color: #4CAF50;
     transition: 0.1s ease-in;
     cursor: pointer;
 }
-
 @media screen and (max-width: 670px) {
     #header a {
         float: none;
@@ -79,6 +72,8 @@ body {
         float: none;
     }
 }
+/*header navigation*/
+/*for login form*/
 /* Full-width input fields */
 .loginform input[type=email],
 .loginform input[type=password] {
@@ -90,12 +85,6 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
 }
-/*slideshow*/
-
-
-/*slideshow*/
-/* Set a style for all buttons */
-
 button {
     background-color: #4CAF50;
     color: white;
@@ -106,129 +95,60 @@ button {
     width: 100%;
     border-radius: 5px;
 }
-
 button:hover {
     background-color: dodgerblue;
 }
-
-
-/* Extra styles for the cancel button */
-
 .cancelbtn {
     background-color: #f44336;
     border-radius: 5px;
 }
-
-/* Center the image and position the close button */
-
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
 }
-
 img.icon {
     width: 20%;
     border-radius: 50%;
 }
-
 .container {
     padding: 16px;
 }
-
 span.psw {
     float: right;
 }
-
 span.psw a,
 span.create a {
     text-decoration: none;
     color: red;
 }
-
 span.psw:hover,
 span.create a:hover {
     text-decoration: underline;
     color: dodgerblue;
 }
-
-
-/* The Modal (background) */
-
 .loginform {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
-/* Modal Content/Box */
-
 .loginform-content {
     background-color: white;
     margin: 5% auto 0 auto;
-    /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 305px;
-    /* Could be more or less, depending on screen size */
 }
+/*for login form*/
 
-
-/* Add Zoom Animation */
-
-
-/* .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
-    }
-    to {
-        transform: scale(1)
-    }
-} */
-
-
-/* Change styles for span and cancel button on extra small screens */
-
-@media screen and (max-width: 600px) {
-    /* span.psw {
-        display: block;
-        float: none;
-    } */
-    /* .cancelbtn {
-        width: 100%;
-    } */
-}
-
-
-/* for signup */
-#signup_modal {
+/* for signup form*/
+#signup_modal,#booking_form {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -388,7 +308,8 @@ button.social:hover {
     bottom: 870px;
     }
 }
-
+/*for signup form*/
+/*for index.html*/
 #body-content {
     width: 100%;
     height: 800px;
@@ -397,7 +318,6 @@ button.social:hover {
 .top_content {
     margin: 0 auto;
     width: 25%;
-    background-color: red;
 }
 
 #content_image {
@@ -411,6 +331,7 @@ button.social:hover {
     font-family: cursive;
 }
 
+/*index.html*/
 
 /* about page */
 
@@ -440,6 +361,8 @@ button.social:hover {
     margin-top: 5px;
     font-size: 150%;
 }
+/*about page*/
+/*footer */
 #footer{
     background: black;
     color: whitesmoke;
@@ -520,7 +443,7 @@ button.social:hover {
     background: red;
     width:25%;
 }
-#help textarea,input[type='email']{
+#help textarea,#help input[type='email']{
     display: block;
     box-sizing: border-box;
     margin:0 auto;
@@ -534,13 +457,13 @@ button.social:hover {
 /*for admin*/
 #admin_content{
     width: 100%;
-    height: 450px;
+    height:600px;
 }
 #sidebar{
     float: left;
-    height: 100%;
     overflow: auto;
     width: 10%;
+    height: 100%;
     background: whitesmoke;
     margin: 0;
     padding: 0;
@@ -566,31 +489,33 @@ button.social:hover {
     height: 100%;
     background: wheat;
 }
-#searchbar_room,#searchbar_customer,#searchbar_booking{
-    width: 25%;
-    margin-top: 5px;
-    margin-left:35%;
-    border: 0.5px solid black;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    font-size: larger;
-    height: 30px;
-    float: left;
-}
-#customer_search,
-#room_search,
-#booking_search{
-    float: left;
-    width:5%;
-    margin-top: 5px;
-    height: 30px;
-    padding:0;
-    margin-left: 5px;
-}
+/*#searchbar_room,#searchbar_customer,#searchbar_booking{*/
+/*    width: 25%;*/
+/*    margin-top: 5px;*/
+/*    margin-left:35%;*/
+/*    border: 0.5px solid black;*/
+/*    border-radius: 5px;*/
+/*    margin-bottom: 5px;*/
+/*    font-size: larger;*/
+/*    height: 30px;*/
+/*    float: left;*/
+/*}*/
+/*#customer_search,*/
+/*#room_search,*/
+/*#booking_search{*/
+/*    float: left;*/
+/*    width:5%;*/
+/*    margin-top: 5px;*/
+/*    height: 30px;*/
+/*    padding:0;*/
+/*    margin-left: 5px;*/
+/*}*/
 .customer_table,.room_table,.booking_table{
     border-collapse:collapse;
     width: 50%;
-    margin:auto auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .table_head,
 td{
@@ -675,7 +600,7 @@ cursor: pointer;
     box-sizing: border-box;
     margin:0 auto;
     width: 250px;
-    height: auto;
+    height: 32px;
     border-radius: 5px;
     border: 1px solid black;
     background: white;
@@ -731,20 +656,20 @@ cursor: pointer;
     margin-left: 5px;
     padding: 0;
 }
-
 #room_container{
     margin-top: 10px;
-    width:100%;
-    background: red;
-}
-#room_description{
-    width: 25%;
-    background: blue;
-    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    background: whitesmoke;
     border-radius: 5px;
-    margin-bottom: 10px;
-    
 }
-#room_image{
-    background: blue;
+#room_container #bookButton{
+    width: 25%;
+    background-color: dodgerblue;
+    border-radius: 5px;
+}
+#room_container #bookButton:hover{
+    background: wheat;
+    color: black;
 }

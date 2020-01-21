@@ -21,7 +21,7 @@
             <a href={% url 'room' %}>Rooms</a>
             <a href={% url 'help' %}>Help</a>
             <a href={% url 'about' %}>About</a>
-            <input type="submit" value="Logout" onclick="openForm()">
+            <input type="submit" value="Logout" onclick="closeform()">
         </div>
     </div>
     <div id="admin_content">
@@ -34,7 +34,9 @@
        </div>
         <div id="admin_body">
         {% block content %}
-
+            <h1>Total no of customers</h1>
+            <h1>Total no of Rooms registered</h1>
+            <h1>Total no of Bookings Done</h1>
         {% endblock %}
         </div>
     </div>
