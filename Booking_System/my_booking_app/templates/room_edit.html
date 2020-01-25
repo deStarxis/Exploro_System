@@ -1,33 +1,62 @@
 {% extends 'Room_table.html' %}
- {% block content %}
-     <form action="/adminpage/room_update/{{ room.Room_ID }}/" method="post" enctype="multipart/form-data" id="room_form">
-{# <form action="/adminpage/customer_update/{{ customer.ID }}/" method="post" enctype="multipart/form-data">#}
+{% load static %}
 
-         {% csrf_token %}
-        {% load static %}
+{% block content %}
+    <form action="/adminpage/room_update/{{ room.Room_ID }}/" method="post" enctype="multipart/form-data"
+          id="room_form">
+        {# <form action="/adminpage/customer_update/{{ customer.ID }}/" method="post" enctype="multipart/form-data">#}
+
+        {% csrf_token %}
         <img width="100px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}">
-         <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
-         <label>Room Type</label>
-         <select>
-             <option value="{{ room.Room_Type }}">{{ room.Room_Type }}</option>
-         </select>
-         <label>Location</label><textarea name="Location">{{ room.Location }} </textarea>
-           <label>Price</label><input name="Price" type="text" value={{ room.Price }} >
-         <label>Description</label><textarea name="Description" style="height: 60px;">{{ room.Description }} </textarea>
-                <button type="submit" id="submitbutton" >
-{#                     {% load static %}#}
-{#                    <img src={% static 'images/Database Icon.png' %}>#}
-                    Submit</button>
-         <button type="reset" id="resetbutton">
-{#              {% load static %}#}
-{#                    <img src={% static 'used_images/Reset.jpg' %}>#}
-                    Reset</button>
-                <button id="listButton" type="button"><a href="{% url 'room_table' %}">
-{#                    {% load static %}#}
-{#                    <img src={% static 'used_images/List.png' %}>#}
-                    Back To Table
-                </a></button>
-            </div>
-        </div>
-     </form>
- {% endblock content %}
+        <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
+        <label>Room Type</label>
+        <select id="roomtype" name="Room_Type">
+            <option value="Single Room">Single Room</option>
+            <option value="Double Room">Double Room</option>
+            <option value="Double Double Room">Double Double Room</option>
+             <option value="Twin Room">Twin Room</option>
+            <option value="Interconnecting Rooms">Interconnecting Rooms</option>
+            <option value="Adjoining Rooms">Adjoining Rooms</option>
+             <option value="Duplex">Duplex</option>
+            <option value="Cabana">Cabana</option>
+            <option value="Studio Room">Studio Room</option>
+             <option value="Parlor">Parlor</option>
+            <option value="Lanai">Lanai</option>
+            <option value="Efficiency Room">Efficiency Room</option>
+            <option value="Hospitality Room">Hospitality Room</option>
+            <option value="Suite Room">Suite Room</option>
+            <option value="King Bedroom">King Bedroom</option>
+            <option value="Queen Bedroom">Queen Room</option>
+        </select>
+{#        <script>#}
+{#            $(document).ready(()=>{#}
+{#                var selectedval="{{ room.Room_Type }}";#}
+{#                for (var i=0;i<15;i++) {#}
+{#                    console.log($("#roomtype").children()[i]);#}
+{#                    var childtag = $("#roomtype").children()[i].innerText;#}
+{#                    if(selectedval==childtag){#}
+{#                        $($("#roomtype").children()[i]).attr('selected','selected');#}
+{#                    }#}
+{#                }#}
+{#            })#}
+{#        </script>#}
+        <label>Location</label><textarea name="Location">{{ room.Location }} </textarea>
+        <label>Price</label><input name="Price" type="text" value={{ room.Price }}>
+        <label>Description</label><textarea name="Description" style="height: 60px;">{{ room.Description }} </textarea>
+        <button type="submit" id="submitbutton">
+            {#                     {% load static %}#}
+            {#                    <img src={% static 'images/Database Icon.png' %}>#}
+            Submit
+        </button>
+        <button type="reset" id="resetbutton">
+            {#              {% load static %}#}
+            {#                    <img src={% static 'used_images/Reset.jpg' %}>#}
+            Reset
+        </button>
+        <button id="listButton" type="button"><a href="{% url 'room_table' %}">
+            {#                    {% load static %}#}
+            {#                    <img src={% static 'used_images/List.png' %}>#}
+            Back To Table
+        </a></button>
+    </form>
+{% endblock content %}

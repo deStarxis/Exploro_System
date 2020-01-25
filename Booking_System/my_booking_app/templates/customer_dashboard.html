@@ -1,28 +1,20 @@
  {% extends "index.html" %}
 {% load static %}
-{% block contentcustomer %}
+{% block content %}
     <div id="customerdetails">
-    <table class="customer_table">
-       <thead class="table_head">
-       <tr>
-       <td>ID</td>
-       <td>FullName</td>
-       <td>Email</td>
-       <td>Mobile</td>
-       <td>Password</td>
-       </tr>
-       </thead>
-  <tbody>
-    <tr>
-{% for customers in customer %}
-        <td>{{ customer.ID }}</td>
-        <td>{{ customer.Fullname }}</td>
-        <td>{{ customer.Email }}</td>
-        <td>{{ customer.Mobile }}</td>
-        <td>{{ customer.Password }}</td>
-    {% endfor %}
-  </tr>
-    </tbody>
-      </table>
+    <h1>My Details</h1>
+        <h2>Full Name</h2>
+        <p>{{ customers.Fullname }}</p>
+        <h2>Email Address</h2>
+        <p>{{ customers.Email }}</p>
+        <h2>Mobile Number</h2>
+        <p>{{ customers.Mobile }}</p>
+        <h2>Password</h2>
+        <p>{{ customers.Password }}<p>
+         <a style="background: dodgerblue;" href="/customer_edit/{{ customers.ID }}" class="updating_customer">Edit My Details</a>
+     <form action="{% url 'customer_delete' customers.ID  %}" method="post" >
+         {% csrf_token %}
+         <button type="submit" class="Deleting_customer"style="width:auto;">Delete My Account</button>
+     </form>
     </div>
 {% endblock %}

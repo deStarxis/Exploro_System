@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 {#<script src="{% static 'js/jquery.min.js' %}"></script>#}
-{#<input type="text" id=searchbar_customer placeholder="Search Customer By Email">#}
-{#<button id="customer_search">Search</button>#}
+<input type="text" id=searchbar_customer placeholder="Search Customer By Email">
+<button id="customer_search">Search</button>
 <table class="customer_table">
     <tr class="table_head">
         <td>ID</td>
@@ -22,6 +22,11 @@
     </tr>
     {% endfor %}
 </table>
+     <form method="post" action="/adminpage/customer_record/">
+    {% csrf_token %}
+    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+    <button type="submit" name="next" value="next" id="next">&gt;</button>
+    </form>
 <script>
     $(document).ready(() => {
         $("#sidebar").find(".customer").removeClass("customer");
@@ -43,7 +48,6 @@
                         html += "<td>" + customer.Email + "</td>";
                         html += "<td>" + customer.Password + "</td>";
                         html += "<td>" + customer.Mobile + "</td>";
-                        html += "<td><a href='/edit/" + user.user_id + "'>edit</a> | <a href='/delete/" + user.user_id + "'>delete</a></td>";
                         html += "</tr>";
                         $(".customer_table").append(html);
                     }

@@ -1,25 +1,33 @@
 {% extends "admin.html" %}
 {% block content %}
-{#    <input type="text" id=searchbar_booking placeholder="Search Bookings By Date">#}
-{#     <button id="booking_search">Search</button>#}
+    <input type="text" id=searchbar_booking placeholder="Search Bookings By Date">
+     <button id="booking_search">Search</button>
 <table class="booking_table">
     <thead class="table_head">
         <tr>
             <td>Booking Number</td>
-            <td>Date of Booking</td>
+            <td>Customer ID</td>
+            <td>Room ID</td>
+             <td>Date of Booking</td>
             <td>No. of Rooms</td>
-            <td>Total Price</td>
         </tr>
     </thead>
     <tbody>
         {% for booking in booking_list %}
             <tr>
                 <td>{{ booking.Booking_ID }}</td>
+                 <td>{{ booking.Customer_ID }}</td>
+                <td>{{ booking.Room_ID }}</td>
                 <td>{{booking.Date_of_Booking}}</td>
                 <td>{{ booking.No_of_Rooms_Booked }}</td>
-                <td>{{ booking.Total_Price }}</td>
+
             </tr>
         {% endfor %}
     </tbody>
 </table>
+     <form method="post" action="/adminpage/booking_record/">
+    {% csrf_token %}
+    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+    <button type="submit" name="next" value="next" id="next">&gt;</button>
+    </form>
 {% endblock %}

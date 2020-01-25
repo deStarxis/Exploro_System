@@ -17,15 +17,9 @@ var signup = document.getElementById('signup_modal');
 window.onclick = function(event) {
     if (event.target == modal) {
         form.style.display = "none";
-    } if (event.target == signup) {
-        form.style.display = "none";
-    }if (event.target==bookingModal){
-        form.style.display="none";
     }
 }
 function opensignup() {
     document.getElementById("signup_modal").style.display = "block";
 }
-function closeform() {
-    document.close();
-}
+

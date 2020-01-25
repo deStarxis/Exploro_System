@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -147,7 +147,27 @@
       <workItem from="1579497780513" duration="1143000" />
       <workItem from="1579501958954" duration="3279000" />
       <workItem from="1579513813362" duration="5056000" />
-      <workItem from="1579569135381" duration="1817000" />
+      <workItem from="1579569135381" duration="4792000" />
+      <workItem from="1579575529575" duration="413000" />
+      <workItem from="1579595422686" duration="6948000" />
+      <workItem from="1579619902293" duration="6280000" />
+      <workItem from="1579656187425" duration="5063000" />
+      <workItem from="1579669328042" duration="642000" />
+      <workItem from="1579680888766" duration="7000" />
+      <workItem from="1579685418137" duration="6780000" />
+      <workItem from="1579697261175" duration="2105000" />
+      <workItem from="1579742316369" duration="4041000" />
+      <workItem from="1579746863218" duration="2633000" />
+      <workItem from="1579751540886" duration="2226000" />
+      <workItem from="1579776668571" duration="906000" />
+      <workItem from="1579791686438" duration="14000" />
+      <workItem from="1579833710442" duration="274000" />
+      <workItem from="1579847846695" duration="715000" />
+      <workItem from="1579853723705" duration="4719000" />
+      <workItem from="1579869732173" duration="791000" />
+      <workItem from="1579934369349" duration="2154000" />
+      <workItem from="1579942835724" duration="1670000" />
+      <workItem from="1579953940089" duration="1124000" />
     </task>
     <servers />
   </component>
@@ -163,9 +183,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579502407521" />
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579569150031">
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1579953965266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579569150031" />
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1579953965266" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1579857566759">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1579857566759" />
   </component>
 </project>

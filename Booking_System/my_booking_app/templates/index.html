@@ -1,12 +1,14 @@
 {% extends 'pagelayout.html' %}
 {% load static %}
 {% block content %}
-    <div id="body_content" style="background: url({% static 'images/background/bell.jpg' %})">
+    <div id="body_content"
+         style="background: url({% static 'images/background/index_background.jpg' %});background-size: cover;">
         <div class="top_content">
-            <img src="{% static 'images/Logo.png' %}" id="content_image">
-            <p>Find your ideal hotel around the Kathmandu Valley over here.</p>
+            {#            <img src="{% static 'images/Logo.png' %}" id="content_image">#}
+            <h1>Find your ideal <span style="color: dodgerblue">Hotel</span> <span style="color: orangered">Room</span>
+            </h1>
+            <h1 style="margin-left: 10%;margin-top: 1%;">around Kathmandu Valley over here!!</h1>
+            <p style="margin-top: 5%;">We offer rooms at ridiculously <span style="color: blue">low price</span>!!</p>
         </div>
     </div>
-    {% block contentcustomer %}
-        {% endblock %}
 {% endblock %}

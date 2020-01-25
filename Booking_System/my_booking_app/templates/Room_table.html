@@ -1,7 +1,7 @@
 {% extends "admin.html" %}
 {% block content %}
-{#    <input type="text" id=searchbar_room placeholder="Search Room By Price">#}
-{#     <button id="room_search">Search</button>#}
+    <input type="text" id=searchbar_room placeholder="Search Room By Price">
+     <button id="room_search">Search</button>
 <table class="room_table" style="overflow: paged-y">
     <thead class="table_head">
         <tr>
@@ -46,4 +46,9 @@
         {% endfor %}
     </tbody>
 </table>
+    <form method="post" action="/adminpage/room_record/">
+    {% csrf_token %}
+    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+    <button type="submit" name="next" value="next" id="next">&gt;</button>
+    </form>
 {% endblock %}

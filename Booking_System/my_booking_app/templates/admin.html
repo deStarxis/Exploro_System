@@ -21,7 +21,7 @@
             <a href={% url 'room' %}>Rooms</a>
             <a href={% url 'help' %}>Help</a>
             <a href={% url 'about' %}>About</a>
-            <input type="submit" value="Logout" onclick="closeform()">
+            <input type="submit" value="Logout" onclick="">
         </div>
     </div>
     <div id="admin_content">
@@ -30,7 +30,6 @@
           <a  class="customer" href="{% url 'customer_table' %}">Customer</a>
           <a class="room"href="{% url 'room_table' %}">Rooms</a>
           <a class="booking"href="{% url 'booking_table' %}">Bookings</a>
-          <a class="contact"href="#about">Contact</a>
        </div>
         <div id="admin_body">
         {% block content %}
@@ -50,11 +49,11 @@
         <div id="footer_content">
             <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
         </div>
-         <div id="footer_icon">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a>
-        </div>
+{#         <div id="footer_icon">#}
+{#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
+{#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
+{#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a>#}
+{#        </div>#}
     </div>
     <script src="{% static 'js/main.js' %}">
     </script>
