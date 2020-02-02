@@ -1,7 +1,8 @@
 {% extends "admin.html" %}
 {% block content %}
-    <input type="text" id=searchbar_room placeholder="Search Room By Price">
-     <button id="room_search">Search</button>
+{#    <input type="text" id=searchbar_room placeholder="Search Room By Price">#}
+{#     <button id="room_search">Search</button>#}
+    <div id="table_container">
 <table class="room_table" style="overflow: paged-y">
     <thead class="table_head">
         <tr>
@@ -24,7 +25,7 @@
             <tr>
                 <td>{{ room.Room_ID}}</td>
                {% load static %}
-                <td ><img height="100px" width="100%" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}"></td>
+                <td ><img height="100px" width="150px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}"></td>
                 <td>{{room.Room_Type}}</td>
                 <td>{{room.Location}}</td>
                 <td>{{ room.Price}}</td>
@@ -45,7 +46,8 @@
             </tr>
         {% endfor %}
     </tbody>
-</table>
+    </table>
+    </div>
     <form method="post" action="/adminpage/room_record/">
     {% csrf_token %}
     <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>

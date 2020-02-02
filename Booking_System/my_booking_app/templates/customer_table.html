@@ -2,8 +2,9 @@
 {% load static %}
 {% block content %}
 {#<script src="{% static 'js/jquery.min.js' %}"></script>#}
-<input type="text" id=searchbar_customer placeholder="Search Customer By Email">
-<button id="customer_search">Search</button>
+{#<input type="text" id=searchbar_customer placeholder="Search Customer By Email">#}
+{#<button id="customer_search">Search</button>#}
+    <div id="table_container">
 <table class="customer_table">
     <tr class="table_head">
         <td>ID</td>
@@ -22,6 +23,7 @@
     </tr>
     {% endfor %}
 </table>
+    </div>
      <form method="post" action="/adminpage/customer_record/">
     {% csrf_token %}
     <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>

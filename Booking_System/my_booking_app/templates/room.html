@@ -1,25 +1,37 @@
 {% extends 'pagelayout.html' %}
 {% load static %}
 {% block content %}
-    <div id="find_room">
-     <input type="text" id=type_room placeholder="Search Room By Type">
-     <button id="find_your_room">Search</button>
-    </div>
+    <h1 style="text-align: center;">Find Your Room Over Here!!</h1>
+{#    <div id="find_room">#}
+{#     <input type="text" id=type_room placeholder="Search Room By Type">#}
+{#     <button id="find_your_room">Search</button>#}
+{#    </div>#}
     <div id="room_container">
         {% for room in room_list %}
-           <h1>{{ room.Room_Type }}</h1>
-            <img src="{% static 'images/icons/location.png' %}" title="Location" style="height: 25px;width: 25px;">
-            {{ room.Location }}
-            <br>
-            <p>
-            <img src="{% static 'images/icons/price.png' %}" title="Price" style="height: 25px;width: 25px;">
-            Rs.{{ room.Price }}</p>
-            <br>
-            <p style="float: left;width: 50%;margin-top: auto;">{{ room.Description }}</p>
-            <img src="{% static 'images/admin_images/room_images/' %}{{ room.Room_Image }}" width="50%" height="auto" style="border-radius: 5px;float: left;margin: 0;">
-                 <button type="submit" id="bookButton" onclick="openBookingForm()">Book</button>
-            <div id="booking_form">
-                <form action="{% url 'bookinginsert' %}" method="POST" id="room_booking" onsubmit="{% static 'js/signup_validate.js' %}">
+            <div class="room_topcontent">
+                <div class="top_left">
+                    <h1>{{ room.Room_Type }}</h1>
+                    <img src="{% static 'images/icons/location.png' %}" title="Location" style="height: 25px;width: 25px;">
+                {{ room.Location }}
+                 <p>
+                <img src="{% static 'images/icons/price.png' %}" title="Price" style="height: 25px;width: 25px;">
+                Rs.{{ room.Price }}</p>
+                </div>
+                <div class="top_right">
+                <button type="submit" id="bookButton" onclick="openBookingForm()" style="width: 150px; margin-left: auto;margin-right: auto;margin-top: 10%;">Book Now</button>
+                </div>
+            </div>
+            <div class="room_downcontent">
+                <div class="room_description">
+                    <p style="overflow: auto;">{{ room.Description }}</p>
+                </div>
+                <div class="room_image">
+                    <img src="{% static 'images/admin_images/room_images/' %}{{ room.Room_Image }}" width="100%" height="100%" style="border-radius: 5px;float: left;margin: 0;">
+                </div>
+            </div>
+        {% endfor %}
+        <div id="booking_form">
+                <form action="{% url 'bookinginsert' %}" method="POST" id="room_booking">
                     {% csrf_token %}
                     <div class="imgcontainer">
                     <!-- <span onclick="document.getElementById('form').style.display='none'" class="close" title="Close Modal">&times;</span> -->
@@ -27,18 +39,20 @@
                     <h1><span style="color:#4CAF50;">Book</span><span style="color: dodgerblue;"> A</span><span style="color: red;"> Room</span></h1>
                     </div>
                     <div class="container">
-{#                    <input type="date" name="Date_of_Booking" placeholder="Date of Booking" value="{{ formb.Date_of_Booking }}" required>#}
+                     <label><b>Customer</b></label>
+                    <input type="text" name="Customer_ID" placeholder="Customer " value="{{ formb.Customer_ID }}" required/>
+                    <label><b>Room</b></label>
+                    <input type="text" name="Room_ID" placeholder="Room" value="{{ formb.Room_ID }}" required/>
                     <label><b>Rooms Booked</b></label>
                     <input type="text" name="No_of_Rooms_Booked" placeholder="No of Rooms Booked" value="{{ formb.No_of_Rooms_Booked }}" required>
                     <label><b>Date of Booking</b></label>
-                    <input type="date" name="Date_of_Booking" value="{{ formb.Date_of_Booking }}" required/>
-                    <input type="hidden" name="Customer_ID" value="{{ formb.Customer_ID }}" required/>
-                    <input type="hidden" name="Room_ID" value="{{ formb.Room_ID }}" required/>
-                    <button type="submit" class="submit">Done</button>
+                    <input type="date" name="Date_of_Booking" placeholder="Date of Booking" value="{{ formb.Date_of_Booking }}" required/>
+                    <button type="submit" class="submit">Book</button>
                     <button type="submit" onclick="document.getElementById('booking_form').style.display='none'">Cancel</button>
                     </div>
                 </form>
             </div>
-        {% endfor %}
+{#        {% endfor %}#}
+{#    </div>#}
     </div>
 {% endblock %}

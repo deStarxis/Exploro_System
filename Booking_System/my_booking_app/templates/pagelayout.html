@@ -24,7 +24,7 @@
     </div>
 </div>
 <div id="form" class="loginform">
-    <form class="loginform-content animate" action="{% url 'customerlogin' %}" method="post">
+    <form class="loginform-content animate" action='/loginValidate/' method="post">
         {% csrf_token %}
         <div class="imgcontainer">
             <img src="{% static 'images/Logo.png' %}" alt="Avatar" class="icon">
@@ -42,6 +42,9 @@
                 <input type="checkbox" name="remember"> Remember me
             </label><br>
             <span class="create">Don't have an account! <a onclick="opensignup()" href="#">Click to create</a></span>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
             <button type="button" onclick="document.getElementById('form').style.display='none'" class="cancelbtn">
                 Cancel
             </button>
@@ -77,6 +80,23 @@
 {% block content %}
 {% endblock %}
 
+{#<div id="footer">#}
+{#    <div id="footer_nav" class="foot">#}
+{#        <ul id="footer_nav_division">#}
+{#            <li><a href="{% url 'index' %}">Home</a></li>#}
+{#            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>#}
+{#        </ul>#}
+{#    </div>#}
+{#    <div id="footer_icon" style="text-align: center;" class="foot">#}
+{#        <p>fsdfsdf</p>#}
+{#        <a href="https://www.facebook.com/" target="_blank"><img src="{% static 'images/icons/footer_images/facebook.png' %}"></a>#}
+{#        <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'images/icons/footer_images/instagram.png' %}"></a>#}
+{#        <a href="https://www.google.com/" target="_blank"><img src="{% static 'images/icons/footer_images/Google.png' %}"></a>#}
+{#        </div>#}
+{#    <div id="footer_content">#}
+{#        <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>#}
+{#    </div>#}
+{#</div>#}
 <div id="footer">
     <div id="footer_nav">
         <ul>
@@ -88,10 +108,10 @@
         <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
     </div>
 
-    {#        <div id="footer_icon">#}
-    {#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
-    {#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
-    {#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
+{#            <div id="footer_icon">#}
+{#                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
+{#                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
+{#                <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
 </div>
 <script src="{% static 'js/main.js' %}">
 </script>

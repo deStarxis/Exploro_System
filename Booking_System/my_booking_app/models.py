@@ -36,7 +36,7 @@ class Room(models.Model):
     Room_Type = models.CharField(choices=ROOM_TYPES, default="", max_length=50)
     Location = models.TextField(max_length=200, null=False)
     Price = models.CharField(max_length=10)
-    Description = models.TextField(max_length=500, null=False, default="")
+    Description = models.TextField(max_length=5000, null=False, default="")
 
     class Meta:
         db_table = "room"

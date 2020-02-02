@@ -8,7 +8,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 /*navigation bar*/
 #header {
     overflow: hidden;
@@ -76,9 +75,18 @@ body {
 /*navigation bar*/
 /*for login form*/
 /* Full-width input fields */
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus
+{
+  background-color: lightgreen;
+}
+#booking_form input[type=text],
 .loginform input[type=email],
 .loginform input[type=password],
-#booking_form input[type=text] {
+#booking_form input[type=date]
+{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -153,13 +161,18 @@ span.create a:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.loginform-content, #room_booking {
+.loginform-content {
     background-color: wheat;
     margin: 5% auto 0 auto;
     border: 1px solid #888;
     width: 305px;
 }
-
+ #room_booking {
+     margin: 5% auto 0 auto;
+     border: 1px solid #888;
+     width: 305px;
+     background: whitesmoke;
+ }
 /*for login form*/
 
 /* for signup form*/
@@ -340,6 +353,8 @@ button.social:hover {
     color: whitesmoke;
     height: 40px;
     line-height: 40px;
+    width: 100%;
+    float: left;
 }
 
 #footer #footer_nav {
@@ -375,7 +390,7 @@ button.social:hover {
     color: dodgerblue;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 610px) {
     #footer {
         width: 100%;
         height: 80px;
@@ -393,29 +408,130 @@ button.social:hover {
         float: left;
         font-size: 25px;
     }
-
-    #gmap_canvas {
-        height: 200px; /* The height is 400 pixels */
-        width: 100%;
-        border: 1px solid black;
-        margin-bottom: 5px; /* The width is the width of the web page */
-    }
-
-    .mapouter {
-        width: 200%;
-    }
-
-    #help {
-        margin: 0;
-        width: 100%;
-        background: blue;
-    }
-
-    #room_image img {
-        width: 100%;
-        height: auto;
-    }
 }
+
+
+/*#footer {*/
+/*    background: whitesmoke;*/
+/*    color: black;*/
+/*    height: 100px;*/
+/*    width: 100%;*/
+/*}*/
+/*.foot{*/
+/*    width: 50%;*/
+/*    height: 50px;*/
+/*    line-height: 50px;*/
+/*    float: left;*/
+/*    background: red;*/
+/*}*/
+/*#footer_icon {*/
+/*    width: 50%;*/
+/*    height: 50px;*/
+/*    line-height: 50px;*/
+/*}*/
+
+/*!*#footer_icon h2{*!*/
+/*!*    float: none;*!*/
+/*!*    font-weight: normal;*!*/
+/*!*    font-size: 20px;*!*/
+/*!*}*!*/
+/*#footer_icon img{*/
+/*    height: 30px;*/
+/*    width: 30px;*/
+/*    border-radius: 5px;*/
+/*}*/
+/*#footer_icon img:hover{*/
+/*    transform: rotate(360deg);*/
+/*    transition: 0.5s;*/
+/*}*/
+/*#footer #footer_nav #footer_nav_division {*/
+/*    list-style: none;*/
+/*}*/
+
+/*#footer #footer_nav #footer_nav_division li {*/
+/*    float: left;*/
+/*    margin-right: 15px;*/
+/*        font-size: 20px;*/
+/*}*/
+
+/*#footer #footer_nav #footer_nav_division li a {*/
+/*    text-decoration: none;*/
+/*    color: green;*/
+/*}*/
+
+/*#footer #footer_nav #footer_nav_division li a:hover {*/
+/*    color: dodgerblue;*/
+/*}*/
+
+/*#footer #footer_content {*/
+/*    float: left;*/
+/*    line-height: 50px;*/
+/*        font-size: 15px;*/
+/*    text-align: center;*/
+/*    height: 50px;*/
+/*    width: 100%;*/
+/*}*/
+/*#footer_content span a {*/
+/*    text-decoration: none;*/
+/*    color: dodgerblue;*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+/*    #footer {*/
+/*        width: 100%;*/
+/*        height:150px;*/
+/*    }*/
+
+/*    #footer_content {*/
+/*        height: 50px;*/
+/*        float: left;*/
+/*    }*/
+/*    #footer_icon h2{*/
+/*    margin-left:0;*/
+/*}*/
+/*    #footer_nav {*/
+/*        width: 100%;*/
+/*        height: 50px;*/
+/*        float: left;*/
+/*        text-align: center;*/
+/*    }*/
+/*    #footer_icon{*/
+/*        width: 100%;*/
+/*        height: 50px;*/
+/*        float: right;*/
+/*    }*/
+/*    #footer #footer_nav #footer_nav_division li {*/
+/*        float: left;*/
+/*        font-size: 25px;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 1000px) {*/
+/*    #footer {*/
+/*        width: 100%;*/
+/*        height:100px;*/
+/*    }*/
+/*    #footer_content {*/
+/*        height: 50px;*/
+/*        float: none;*/
+
+/*    }*/
+/*#footer #footer_division .f {*/
+/*    width: 50%;*/
+/*    height: 50px;*/
+/*    float: left;*/
+/*}*/
+/*    #footer_nav {*/
+/*        width: 50%;*/
+/*        height: 50px;*/
+/*        text-align: center;*/
+/*    }*/
+/*    #footer_icon{*/
+/*        width: 50%;*/
+/*        height: 50px;*/
+/*        text-align: center;*/
+/*    }*/
+
+/*}*/
 /*footer */
 
 /*for index.html*/
@@ -436,34 +552,113 @@ button.social:hover {
 
 .top_content h1 {
     font-family: cursive;
-    font-size: 50px;
+    font-size: xx-large;
 }
 
 .top_content p {
     font-family: cursive;
-    font-size: 30px;
+    font-size: x-large;
 }
 
 /*index.html*/
 
+@media screen and (max-width: 1260px) {
+    .room_downcontent {
+        width: 100% !important;
+    }
+
+    .room_downcontent .room_description {
+        width: 100% !important;
+        float: left !important;
+    }
+    .room_downcontent .room_image {
+        width: 100% !important;
+        float: right !important;
+    }
+    #table_container{
+        overflow: auto;
+        margin:0;
+        padding: 0;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+
+    .customer_table, .room_table, .booking_table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+        margin:0;
+    }
+    #admin_content{
+        width: 100%;
+    }
+    #sidebar{
+        width: 20%;
+    }
+    #admin_body{
+        width: 80%;
+    }
+    #gmap_canvas {
+        height: 200px; /* The height is 400 pixels */
+        width: 100%;
+        border: 1px solid black;
+        margin-bottom: 5px; /* The width is the width of the web page */
+    }
+
+    .mapouter {
+        width: 200%;
+    }
+    /*.customer_table, .room_table, .booking_table {*/
+    /*    border-collapse: collapse;*/
+    /*    width: auto;*/
+    /*    margin-top: 10px;*/
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
+    /*}*/
+    /*#table_container{*/
+    /*    height: 200px;*/
+    /*}*/
+    #help {
+        margin: 0;
+        width: 100%;
+        background: blue;
+    }
+
+    #room_image img {
+        width: 100%;
+        height: auto;
+    }
+    .about_content,#privacy_content {
+    width: 90%;
+    margin-left: 5%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .customer_table, .room_table, .booking_table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+}
 /* about page */
 
-.about_content {
-    width: 100%;
+.about_content,#privacy_content {
+    width: 80%;
+    margin-left: 10%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .about_content hr {
-    width: 38%;
+    width: 23%;
     background: black;
 }
 
 .about_content h1, #privacy_content h1 {
-    font-size: 300%;
+    font-size: 40px;
 }
 
 .about_content h1 sup {
-    font-size: x-small;
+    font-size: xx-small;
 }
 
 .about_content h1 span {
@@ -471,13 +666,10 @@ button.social:hover {
 }
 
 .about_content p, #privacy_content p {
-    margin-top: 5px;
+    margin-top: 10px;
 
 }
-
 /*about page*/
-
-
 .mapouter {
     height: auto;
     width: 50%;
@@ -507,6 +699,7 @@ button.social:hover {
 }
 
 /*for admin*/
+
 #admin_content {
     width: 100%;
     height: 600px;
@@ -514,7 +707,6 @@ button.social:hover {
 
 #sidebar {
     float: left;
-    overflow: auto;
     width: 10%;
     height: 100%;
     background: whitesmoke;
@@ -560,29 +752,56 @@ button.social:hover {
 }
 
 #prev {
-    margin-left: 45%;
+    margin-left: auto;
     text-align: center;
-    width: auto;
+    width: 1px;
+    height: auto;
 }
 
 #next {
-    margin-right: 45%;
+    margin-right: auto;
     float: right;
     text-align: center;
-    width: auto;
+    width: 1px;
+    height: auto;
 }
-
-#customer_search,
-#room_search,
-#booking_search {
-    float: left;
-    width: 5%;
-    margin-top: 5px;
-    height: 30px;
+@media screen and (max-width: 1340px){
+    #sidebar{
+        width: 100%!important;
+        height: auto!important;
+    }
+    #sidebar a{
+        padding: 10px;
+        margin: 0;
+        float: left!important;
+    }
+   #sidebar h3 a {
+    width: 100%;
     padding: 0;
-    margin-left: 5px;
+    text-decoration: none;
+    font-size: inherit;
 }
-
+    #admin_body{
+        width: 100%!important;
+    }
+}
+/*#customer_search,*/
+/*#room_search,*/
+/*#booking_search {*/
+/*    float: left;*/
+/*    width: 5%;*/
+/*    margin-top: 5px;*/
+/*    height: 30px;*/
+/*    padding: 0;*/
+/*    margin-left: 5px;*/
+/*}*/
+#table_container{
+    /*margin-top: 40px;*/
+    margin-left: auto;
+    overflow: auto;
+    margin-right: auto;
+    height: 500px;
+}
 .customer_table, .room_table, .booking_table {
     border-collapse: collapse;
     width: 50%;
@@ -590,7 +809,6 @@ button.social:hover {
     margin-left: auto;
     margin-right: auto;
 }
-
 .table_head,
 td {
     font-family: sans-serif;
@@ -738,21 +956,48 @@ tr:nth-child(even) {
 }
 
 #room_container {
-    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
     background: whitesmoke;
-    border-radius: 5px;
 }
+.room_topcontent{
+    width: 100%;
+    height: auto;
+}
+.room_topcontent .top_right{
+    float: right;
+    width: 50%;
+}
+.room_topcontent .top_left{
+    float: left;
+    width: 50%;
+}
+.room_downcontent{
+    height: auto;
+    width: 100%;
+    float: right;
+}
+.room_downcontent .room_description{
+    width: 50%;
+    float: left;
+}
+.room_downcontent .room_image{
+    width: 50%;
+    float: right;
 
-#room_container #bookButton {
-    width: 25%;
-    background-color: dodgerblue;
-    border-radius: 5px;
 }
+/*.room_details{*/
+/*    width:100%;*/
+/*    background: blue;*/
+/*}*/
+/*#room_container #bookButton {*/
+/*    width: 25%;*/
+/*    background-color: dodgerblue;*/
+/*    border-radius: 5px;*/
+/*}*/
 
-#room_container #bookButton:hover {
-    background: wheat;
-    color: black;
-}
+/*#room_container #bookButton:hover {*/
+/*    background: wheat;*/
+/*    color: black;*/
+/*}*/

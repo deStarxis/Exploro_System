@@ -1,32 +1,50 @@
 from django.shortcuts import render, redirect
+
+from .authenticate import Authenticate
 from .forms import Customer_Signup_Form, Room_Details, Booking_Form
 from .models import Customer, Room, Booking
 from django.http import HttpResponse, JsonResponse
+
+
 # from .authenticate import Authenticate
 
 def index(request):
     return render(request, 'index.html')
 
+
 def room(request):
     context = {'room_list': Room.objects.all()}
     return render(request, 'room.html', context)
 
+
+def loginValidate(request):
+    request.session['Email'] = request.POST["Email"]
+    request.session['Password'] = request.POST["Password"]
+    if (request.session['Email'] == "admin@gmail.com"):
+        if (request.session['Password'] == "admin123"):
+            return render(request, 'admin.html')
+    else:
+        customers = Customer.objects.get(Email=request.session['Email'])
+        id = customers.ID
+        return redirect("/dashboard/'" + str(id) + "'")
+
+
+@Authenticate.valid_user
 def customerdashboard(request, id):
-    customers = Customer.objects.get(ID=id)
-    return render(request, 'customer_dashboard.html', {'customers': customers})
+    context = {'customers': Customer.objects.get(ID=id)}
+    # context2 ={'bookings': Booking.objects.get(Booking_ID=id2)}
+    return render(request, 'customer_dashboard.html', context)
 
 
 def customer_edit(request, id):
     customer = Customer.objects.get(ID=id)
     return render(request, 'customer_edit.html', {'customer': customer})
 
-
 def customer_update(request, id):
     customers = Customer.objects.get(ID=id)
     form = Customer_Signup_Form(request.POST, instance=customers)
     form.save()
-    return redirect('/dashboard/'+str(customers.ID)+'/')
-
+    return redirect("/dashboard/'" + str(id) + "'")
 
 def customer_delete(request, id):
     customer = Customer.objects.get(ID=id)
@@ -46,20 +64,16 @@ def privacy(request):
     return render(request, 'privacy.html')
 
 
+# def admin(request, CID , RID , BID):
+#     context = {'customers': Customer.objects.get(ID=CID),'rooms':Room.objects.get(Room_ID=RID),'bookings':Booking.objects.get(Booking_ID=BID)}
+#     return render(request, 'admin.html', context)
 def admin(request):
-    return render(request, 'admin.html')
+    return render(request, "admin.html")
 
 
-def logincheck(request):
-    username = request.POST["Email"]
-    password = request.POST["Password"]
-    if (username == "admin@gmail.com"):
-        if (password == "admin123"):
-            return render(request, 'admin.html')
-    else:
-        customers = Customer.objects.get(Email=username, Password=password)
-        if (customers.Password == password):
-            return render(request, "customer_dashboard.html", {'customers': customers})
+def logout(request):
+    del request.session['Email']
+    return redirect("index")
 
 
 # def customer_entry(request):
@@ -94,9 +108,9 @@ def customersearch(request):
 # room record
 def room_table(request):
     if "next" in request.POST:
-        context = {'room_list': Room.objects.raw("select * from room limit 4 offset 4")}
+        context = {'room_list': Room.objects.raw("select * from room limit 2 offset 2")}
     else:
-        context = {'room_list': Room.objects.raw("select * from room limit 4 offset 0")}
+        context = {'room_list': Room.objects.raw("select * from room limit 2 offset 0")}
     return render(request, 'Room_table.html', context)
 
 
@@ -120,6 +134,7 @@ def room_update(request, id):
     formr = Room_Details(request.POST, request.FILES, instance=room)
     formr.save()
     return redirect('room_table')
+
 
 def room_delete(request, id):
     Room.objects.get(Room_ID=id).Room_Image.delete()

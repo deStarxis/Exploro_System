@@ -21,7 +21,8 @@
             <a href={% url 'room' %}>Rooms</a>
             <a href={% url 'help' %}>Help</a>
             <a href={% url 'about' %}>About</a>
-            <input type="submit" value="Logout" onclick="">
+            <a href="{% url 'logout' %}" style="float: none;margin: 0">
+            <input type="submit" value="Logout"/></a>
         </div>
     </div>
     <div id="admin_content">
@@ -34,27 +35,36 @@
         <div id="admin_body">
         {% block content %}
             <h1>Total no of customers</h1>
+{#            {% for customers in customers %}#}
+{#            <p>{{ customers.ID }}</p>#}
+{#            {% endfor %}#}
             <h1>Total no of Rooms registered</h1>
+{#            {% for rooms in rooms %}#}
+{#            <p>{{ rooms.Room_ID }}</p>#}
+{#            {% endfor %}#}
             <h1>Total no of Bookings Done</h1>
+{#            {% for bookings in bookings %}#}
+{#            <p>{{ bookings.Booking_ID }}</p>#}
+{#            {% endfor %}#}
         {% endblock %}
         </div>
     </div>
-    <div id="footer">
-        <div id="footer_nav">
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
-            </ul>
-        </div>
-        <div id="footer_content">
-            <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
-        </div>
-{#         <div id="footer_icon">#}
-{#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
-{#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
-{#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a>#}
-{#        </div>#}
+   <div id="footer">
+    <div id="footer_nav">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+        </ul>
     </div>
+    <div id="footer_content">
+        <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
+    </div>
+
+    {#        <div id="footer_icon">#}
+    {#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
+    {#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
+    {#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
+</div>
     <script src="{% static 'js/main.js' %}">
     </script>
 </body>
