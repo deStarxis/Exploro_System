@@ -5,7 +5,6 @@
     <form action="/adminpage/room_update/{{ room.Room_ID }}/" method="post" enctype="multipart/form-data"
           id="room_form">
         {# <form action="/adminpage/customer_update/{{ customer.ID }}/" method="post" enctype="multipart/form-data">#}
-
         {% csrf_token %}
         <img width="100px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}">
         <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
@@ -28,18 +27,18 @@
             <option value="King Bedroom">King Bedroom</option>
             <option value="Queen Bedroom">Queen Room</option>
         </select>
-{#        <script>#}
-{#            $(document).ready(()=>{#}
-{#                var selectedval="{{ room.Room_Type }}";#}
-{#                for (var i=0;i<15;i++) {#}
-{#                    console.log($("#roomtype").children()[i]);#}
-{#                    var childtag = $("#roomtype").children()[i].innerText;#}
-{#                    if(selectedval==childtag){#}
-{#                        $($("#roomtype").children()[i]).attr('selected','selected');#}
-{#                    }#}
-{#                }#}
-{#            })#}
-{#        </script>#}
+        <script>
+            $(document).ready(()=>{
+                var selectedval="{{ room.Room_Type }}";
+                for (var i=0;i<15;i++) {
+                    console.log($("#roomtype").children()[i]);
+                    var childtag = $("#roomtype").children()[i].innerText;
+                    if(selectedval==childtag){
+                        $($("#roomtype").children()[i]).attr('selected','selected');
+                    }
+                }
+            })
+        </script>
         <label>Location</label><textarea name="Location">{{ room.Location }} </textarea>
         <label>Price</label><input name="Price" type="text" value={{ room.Price }}>
         <label>Description</label><textarea name="Description" style="height: 60px;">{{ room.Description }} </textarea>

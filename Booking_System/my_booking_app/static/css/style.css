@@ -752,14 +752,14 @@ button.social:hover {
 }
 
 #prev {
-    margin-left: auto;
+    margin-left: 35%;
     text-align: center;
     width: 1px;
     height: auto;
 }
 
 #next {
-    margin-right: auto;
+    margin-right: 35%;
     float: right;
     text-align: center;
     width: 1px;
@@ -774,12 +774,13 @@ button.social:hover {
         padding: 10px;
         margin: 0;
         float: left!important;
+        font-size: large!important;
     }
    #sidebar h3 a {
     width: 100%;
     padding: 0;
     text-decoration: none;
-    font-size: inherit;
+    font-size: x-large!important;
 }
     #admin_body{
         width: 100%!important;

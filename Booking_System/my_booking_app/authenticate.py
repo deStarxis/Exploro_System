@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from my_booking_app.models import Customer
+from my_booking_app.models.customer import Customer
 from django.contrib import messages
+
 
 class Authenticate:
     def valid_user(function):
@@ -14,3 +15,4 @@ class Authenticate:
                 return redirect("/index")
 
         return wrap
+

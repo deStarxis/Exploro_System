@@ -1,16 +1,4 @@
 from django.db import models
-from datetime import date
-#customer table
-class Customer(models.Model):
-    ID = models.AutoField(auto_created=True, primary_key=True)
-    Fullname = models.CharField(max_length=100)
-    Email = models.EmailField(max_length=100, unique=True)
-    Mobile = models.CharField(max_length=15)
-    Password = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = "customer"
-
 #room table
 class Room(models.Model):
     Room_ID = models.AutoField(auto_created=True, primary_key=True)
@@ -40,14 +28,3 @@ class Room(models.Model):
 
     class Meta:
         db_table = "room"
-
-#booking table
-class Booking(models.Model):
-    Booking_ID = models.AutoField(auto_created=True, primary_key=True)
-    Date_of_Booking= models.DateField(default=date.today)
-    Customer_ID= models.CharField(default=False,max_length=5)
-    Room_ID=models.CharField(default=False,max_length=5)
-    No_of_Rooms_Booked = models.CharField(max_length=5)
-
-    class Meta:
-        db_table = "booking"
