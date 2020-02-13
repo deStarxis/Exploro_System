@@ -1,27 +1,32 @@
- {% extends 'Room_table.html' %}
- {% block content %}
-     {% load static %}
-     <form action="" method="post" enctype="multipart/form-data" id="room_form" style="background-image: url({% static 'images/admin_images/room_form.jpg' %})">
-         {% csrf_token %}
-            <label>Room Image</label>{{ formr.Room_Image }}
-            <label>Room Type</label>{{formr.Room_Type }}
-            <label>Location</label>{{ formr.Location }}
-            <label>Price</label>{{ formr.Price }}
-            <label>Description</label>{{ formr.Description }}
-                <button type="submit" id="submitbutton">
-{#                     {% load static %}#}
-{#                    <img src={% static 'used_images/Database Icon.png' %}>#}
-                    Submit</button>
-         <button type="reset" id="resetbutton">
-{#              {% load static %}#}
-{#                    <img src={% static 'used_images/Reset.jpg' %}>#}
-                    Reset</button>
-                <button id="listButton" type="button"><a href="{% url 'room_table' %}">
-{#                    {% load static %}#}
-{#                    <img src={% static 'used_images/List.png' %}>#}
-                    Back To Table
-                </a></button>
-            </div>
-        </div>
-     </form>
- {% endblock content %}
+{# room insert page #}
+{% extends 'Room_table.html' %}
+{% load static %}
+{% block content %}
+    {# room insert page starts from here #}
+    <h1 style="text-align: center;">Add a new Room</h1>
+    {# form for filling the room details #}
+    {# room form starts #}
+    <form action="{% url 'room_insert' %}" method="post" enctype="multipart/form-data" id="room_form">
+        {% csrf_token %}
+        <label ><b>Room Image</b></label>{{ formr.Room_Image }}
+        <label for="Room_Type"><b>Room Type</b></label>{{formr.Room_Type }}
+        <label for="Room_Location"><b>Location</b></label>{{ formr.Location }}
+        <label for="Room_Price"><b>Price</b></label>{{ formr.Price }}
+        <label for="Room_Description"><b>Description</b></label>{{ formr.Description }}
+        {# submit button #}
+        <button type="submit" id="submitbutton">
+            Submit</button>
+        {# reset button #}
+        <button type="reset" id="resetbutton">
+            Reset</button>
+        {# for going back to room table #}
+        <button id="listButton" type="button"><a href="{% url 'room_table' %}">
+            Back To Table
+        </a></button>
+    </form>
+    {# room form ends #}
+    {# room insert page ends here #}
+{% endblock content %}
+
+
+

@@ -11,8 +11,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -186,6 +186,37 @@
       <workItem from="1580709680671" duration="1445000" />
       <workItem from="1580712736477" duration="2499000" />
       <workItem from="1580746573090" duration="2007000" />
+      <workItem from="1580779237103" duration="3547000" />
+      <workItem from="1580875439588" duration="943000" />
+      <workItem from="1580896311430" duration="1539000" />
+      <workItem from="1580910316506" duration="4203000" />
+      <workItem from="1580954493440" duration="500000" />
+      <workItem from="1580964999592" duration="881000" />
+      <workItem from="1580968731581" duration="481000" />
+      <workItem from="1580995324367" duration="1955000" />
+      <workItem from="1580997459523" duration="647000" />
+      <workItem from="1581039049578" duration="1381000" />
+      <workItem from="1581041354944" duration="598000" />
+      <workItem from="1581044748138" duration="529000" />
+      <workItem from="1581059692403" duration="836000" />
+      <workItem from="1581121108278" duration="16831000" />
+      <workItem from="1581142989835" duration="13729000" />
+      <workItem from="1581159627281" duration="8783000" />
+      <workItem from="1581221459262" duration="2951000" />
+      <workItem from="1581228942749" duration="1309000" />
+      <workItem from="1581251387192" duration="11102000" />
+      <workItem from="1581294495925" duration="2620000" />
+      <workItem from="1581306940428" duration="405000" />
+      <workItem from="1581308573350" duration="7460000" />
+      <workItem from="1581324938829" duration="220000" />
+      <workItem from="1581325264944" duration="530000" />
+      <workItem from="1581335616603" duration="5063000" />
+      <workItem from="1581396864076" duration="3510000" />
+      <workItem from="1581404190861" duration="4472000" />
+      <workItem from="1581426191918" duration="5918000" />
+      <workItem from="1581474887997" duration="44000" />
+      <workItem from="1581474960213" duration="1076000" />
+      <workItem from="1581557829413" duration="23000" />
     </task>
     <servers />
   </component>
@@ -193,21 +224,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580699200888">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581398865510">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1580699200888" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1581398865510" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1579502407521">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579502407521" />
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1580746587602">
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1581474963068">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1580746587602" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1579857566759">
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581474963068" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581398722826">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1579857566759" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1581398722826" />
   </component>
 </project>

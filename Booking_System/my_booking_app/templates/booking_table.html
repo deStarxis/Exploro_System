@@ -1,35 +1,49 @@
+{# booking table #}
 {% extends "admin.html" %}
 {% block content %}
-{#    <input type="text" id=searchbar_booking placeholder="Search Bookings By Date">#}
-{#     <button id="booking_search">Search</button>#}
+    {# booking table starts from here #}
     <div id="table_container">
-<table class="booking_table">
-    <thead class="table_head">
-        <tr>
-            <td>Booking Number</td>
-            <td>Customer ID</td>
-            <td>Room ID</td>
-             <td>Date of Booking</td>
-            <td>No. of Rooms</td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for booking in booking_list %}
+        {# defning all the data of the booking that are to be visible in the booking table #}
+        <table class="booking_table">
+            <thead class="table_head">
             <tr>
-                <td>{{ booking.Booking_ID }}</td>
-                 <td>{{ booking.Customer_ID }}</td>
-                <td>{{ booking.Room_ID }}</td>
-                <td>{{booking.Date_of_Booking}}</td>
-                <td>{{ booking.No_of_Rooms_Booked }}</td>
-
+                <td>Booking Number</td>
+                <td>Customer </td>
+                <td>Room </td>
+                <td>Date of Booking</td>
+                <td>No. of Rooms</td>
+                <td>Action</td>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+            {# fetching all the required data of the booking from the database #}
+            {% for booking in booking_list %}
+                <tr>
+                    <td>{{ booking.Booking_ID }}</td>
+                    <td>{{ booking.Customer }}</td>
+                    <td>{{ booking.Room }}</td>
+                    <td>{{booking.Date_of_Booking}}</td>
+                    <td>{{ booking.No_of_Rooms_Booked }}</td>
+                    {# for deleting the selected booking record form the database #}
+                    <td> <form action="{% url 'booking_delete' booking.Booking_ID  %}" method="post" >
+                        {% csrf_token %}
+                        <button type="submit" class="Deleting_booking">
+                            {% load static %}
+                            <img src="{% static 'images/admin_images/Delete.png' %}" title="Deleting Booking Details">
+                        </button>
+                    </form></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
-     <form method="post" action="/adminpage/booking_record/">
-    {% csrf_token %}
-    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
-    <button type="submit" name="next" value="next" id="next">&gt;</button>
+    {# for pagination #}
+    <form method="post" action="/adminpage/booking_record/">
+        {% csrf_token %}
+        {# previous button #}
+        <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+        {# next button #}
+        <button type="submit" name="next" value="next" id="next">&gt;</button>
     </form>
+    {# booking table page ends here #}
 {% endblock %}

@@ -1,28 +1,35 @@
+{#main html page#}
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>
+    <title>{# title of the project #}
         exploro.com.np
     </title>
+    {# title icon #}
     <link rel="icon" href="{% static 'images/ICON_TITLE.jpg' %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/ICON_TITLE.jpg">
+    {#linking css#}
     <link href={% static 'css/style.css' %} type="text/css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8bc8d54818.js"></script>
+    {#linking jquery file#}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
 </head>
 <body>
+{#main navigation bar#}
 <div id="header">
+    {#company's logo#}
     <a href="{% url 'index' %}" class="logo"><img src="{% static 'images/Logo.jpg' %}" title="exploro"></a>
+    {# navigation bar #}
     <div id="header-nav">
         <a href={% url 'index' %}>Home</a>
         <a href={% url 'room' %}>Rooms</a>
-        <a href="{% url 'help' %}">Help</a>
         <a href={% url 'about' %}>About</a>
+        {# opening the login form #}
         <input type="submit" value="Get Started" onclick="openForm()">
     </div>
 </div>
+{# login form #}
 <div id="form" class="loginform">
     <form class="loginform-content animate" action='/loginValidate/' method="post">
         {% csrf_token %}
@@ -36,14 +43,12 @@
             <input type="email" placeholder="Enter Username" name="Email" value="{{ form.Email }}" required>
             <label for="Password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="Password" value="{{ form.Password }}" required>
-            <span class="psw">Forgot <a href="#">password</a></span>
             <button type="submit" id="Login">Login</button>
-            <label>
-                <input type="checkbox" name="remember"> Remember me
-            </label><br>
+        {# opening the signup form #}
             <span class="create">Don't have an account! <a onclick="opensignup()" href="#">Click to create</a></span>
             {% for message in messages %}
-                {{ message }}
+                {# displaying the message if email or password is incorrect #}
+            <script>alert('{{ message }}')</script>
             {% endfor %}
             <button type="button" onclick="document.getElementById('form').style.display='none'" class="cancelbtn">
                 Cancel
@@ -51,26 +56,32 @@
         </div>
     </form>
 </div>
+{# signup form #}
 <div id="signup_modal">
     <div id="signupform">
-        <form action="{% url 'customersignup' %}" method="POST" class="left-box" id="signup_form"
-              onsubmit="{% static 'js/signup_validate.js' %}">
+        {# customer signup form starts #}
+        <form action="{% url 'customersignup' %}" method="POST" class="left-box" id="signup_form">
             {% csrf_token %}
-            <h1>Sign Up</h1>
-            <input type="text" name="Fullname" placeholder="Full Name" value="{{ form.Fullname }}" required>
-            <input type="email" name="Email" placeholder="Email" value="{{ form.Email }}" required>
-            <input type="text" name="Mobile" placeholder="Mobile Number" value="{{ form.Mobile }}" required>
-            <input type="password" name="Password" placeholder="Password" value="{{ form.Password }}" required>
-            <input type="password" name="Verify_Password" placeholder="Verify Password" value="{{ form.Password }}"
-                   required>
-            {# <input type="password" name="Password" placeholder="Verify Password" value="{{ form.Password }}">#}
+            <h1 style="font-weight: bolder"><span style="color:#4CAF50;">Sign</span><span style="color: dodgerblue;"> Up</span><span
+                    style="color: red;"> Form</span></h1>
+             <span id="NameField">Name</span>
+            <input type="text" id="FullnameS" name="Fullname" value="{{ form.Fullname }}" >
+            <span id="EmailField"> Email </span>
+            <input type="email" id="EmailS" name="Email" value="{{ form.Email }}" >
+            <span id="MobileField">Mobile Number</span>
+            <input type="text" id="MobileS" name="Mobile"  value="{{ form.Mobile }}" >
+            <span id="PasswordField">Password</span>
+            <input type="password" id="PasswordS" name="Password"  value="{{ form.Password }}" >
+            <span id="VerifyPasswordField">Verify Password</span>
+            <input type="password" id="Verify_PasswordS" name="Verify_Password" value="{{ form.Password }}">
             <button type="submit" class="submit">Sign Up</button>
         </form>
+        {# customer signup form ends #}
         <div class="or">OR</div>
         <form action="" method="POST" class="right-box">
             <span onclick="document.getElementById('signup_modal').style.display='none'" class="closebutton"
                   title="Close Signup">&times;</span>
-            <h1 class="signinwith">Sign Up With Social Network</h1>
+            <h1 class="signinwith" style="font-weight: bolder"><span style="color: red;">Sign Up </span><span style="color: dodgerblue;">With </span> <span style="color: lime;">Social Network</span></h1>
             <button class="social facebook">Sign Up with Facebook</button>
             <button class="social instagram">Sign Up with Instagram</button>
             <button class="social google">Sign Up with Google</button>
@@ -79,24 +90,7 @@
 </div>
 {% block content %}
 {% endblock %}
-
-{#<div id="footer">#}
-{#    <div id="footer_nav" class="foot">#}
-{#        <ul id="footer_nav_division">#}
-{#            <li><a href="{% url 'index' %}">Home</a></li>#}
-{#            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>#}
-{#        </ul>#}
-{#    </div>#}
-{#    <div id="footer_icon" style="text-align: center;" class="foot">#}
-{#        <p>fsdfsdf</p>#}
-{#        <a href="https://www.facebook.com/" target="_blank"><img src="{% static 'images/icons/footer_images/facebook.png' %}"></a>#}
-{#        <a href="https://www.instagram.com/" target="_blank"><img src="{% static 'images/icons/footer_images/instagram.png' %}"></a>#}
-{#        <a href="https://www.google.com/" target="_blank"><img src="{% static 'images/icons/footer_images/Google.png' %}"></a>#}
-{#        </div>#}
-{#    <div id="footer_content">#}
-{#        <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>#}
-{#    </div>#}
-{#</div>#}
+{# footer of all pages #}
 <div id="footer">
     <div id="footer_nav">
         <ul>
@@ -107,14 +101,11 @@
     <div id="footer_content">
         <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
     </div>
-
-{#            <div id="footer_icon">#}
-{#                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
-{#                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
-{#                <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
 </div>
+{# linking the custom javascript file  #}
 <script src="{% static 'js/main.js' %}">
 </script>
+{# linking the javascript file that is used for form validation #}
+<script src="{% static 'js/form_validate.js' %}"></script>
 </body>
-
 </html>

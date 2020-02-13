@@ -4,26 +4,22 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+/*pagelayout.html*/
 /*navigation bar*/
+/*for header*/
 #header {
     overflow: hidden;
-    background: whitesmoke;
+    background-image: linear-gradient(white,whitesmoke);
 }
+/*for logo*/
 #header .logo img {
     height: 80px;
     width: 80px;
 }
-/* #header a {
-    float: left;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    font-size: 25px;
-} */
+/*for navigation bar*/
 #header-nav {
     float: right;
 }
@@ -55,6 +51,7 @@ body {
     transition: 0.1s ease-in;
     cursor: pointer;
 }
+/*for small displays*/
 @media screen and (max-width: 670px) {
     #header a {
         float: none;
@@ -73,8 +70,8 @@ body {
     }
 }
 /*navigation bar*/
-/*for login form*/
-/* Full-width input fields */
+
+/*for input fields*/
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
@@ -82,10 +79,10 @@ input[type=date]:focus
 {
   background-color: lightgreen;
 }
-#booking_form input[type=text],
+
+/*for login form*/
 .loginform input[type=email],
-.loginform input[type=password],
-#booking_form input[type=date]
+.loginform input[type=password]
 {
     width: 100%;
     padding: 12px 20px;
@@ -95,7 +92,10 @@ input[type=date]:focus
     box-sizing: border-box;
     border-radius: 5px;
 }
-
+.loginform .cancelbtn {
+    background-color: #f44336;
+    border-radius: 5px;
+}
 button {
     background-color: #4CAF50;
     color: white;
@@ -111,10 +111,6 @@ button:hover {
     background-color: dodgerblue;
 }
 
-.cancelbtn {
-    background-color: #f44336;
-    border-radius: 5px;
-}
 
 .imgcontainer {
     text-align: center;
@@ -130,24 +126,17 @@ img.icon {
 .container {
     padding: 16px;
 }
-
-span.psw {
-    float: right;
-}
-
-span.psw a,
 span.create a {
     text-decoration: none;
     color: red;
 }
 
-span.psw:hover,
 span.create a:hover {
     text-decoration: underline;
     color: dodgerblue;
 }
 
-.loginform, #booking_form {
+.loginform {
     display: none;
     position: fixed;
     z-index: 1;
@@ -156,45 +145,32 @@ span.create a:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    /*background-color: rgb(0, 0, 0);*/
     background: black;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .loginform-content {
-    background-color: wheat;
+    background-image: linear-gradient(white,wheat);
     margin: 5% auto 0 auto;
     border: 1px solid #888;
     width: 305px;
 }
- #room_booking {
-     margin: 5% auto 0 auto;
-     border: 1px solid #888;
-     width: 305px;
-     background: whitesmoke;
- }
+
 /*for login form*/
+
 
 /* for signup form*/
 #signup_modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
 #signupform {
@@ -210,6 +186,7 @@ span.create a:hover {
     padding: 40px;
     width: 300px;
     height: 400px;
+    background-image: linear-gradient(sandybrown,white);
     float: left;
 }
 
@@ -224,7 +201,6 @@ span.create a:hover {
 .left-box input[type="email"] {
     display: block;
     box-sizing: border-box;
-    margin-bottom: 20px;
     padding: 4px;
     width: 220px;
     height: 32px;
@@ -233,7 +209,11 @@ span.create a:hover {
     border-bottom: 0.5px solid black;
     background: transparent;
 }
-
+.left-box span{
+    width:220px;
+    height: 32px;
+    font-weight: bold;
+}
 .left-box .submit {
     margin-bottom: 28px;
     width: 220px;
@@ -253,9 +233,7 @@ span.create a:hover {
     padding: 40px;
     width: 300px;
     height: 450px;
-    background: wheat;
-    /* background-size: cover;
-    background-position: center; */
+    background-image: linear-gradient(#00467F,#A5CC82);
     float: right;
 }
 
@@ -313,8 +291,8 @@ button.social:hover {
     background: transparent;
     border: solid 1px dodgerblue;
 }
-
-@media screen and (max-width: 600px) {
+/*for small displays*/
+@media screen and (max-width: 670px) {
     #signupform {
         width: 300px;
         height: 900px;
@@ -345,8 +323,9 @@ button.social:hover {
         bottom: 870px;
     }
 }
-
 /*for signup form*/
+
+
 /*footer */
 #footer {
     background: black;
@@ -389,7 +368,7 @@ button.social:hover {
     text-decoration: none;
     color: dodgerblue;
 }
-
+/*for small displays*/
 @media screen and (max-width: 610px) {
     #footer {
         width: 100%;
@@ -410,186 +389,47 @@ button.social:hover {
     }
 }
 
-
-/*#footer {*/
-/*    background: whitesmoke;*/
-/*    color: black;*/
-/*    height: 100px;*/
-/*    width: 100%;*/
-/*}*/
-/*.foot{*/
-/*    width: 50%;*/
-/*    height: 50px;*/
-/*    line-height: 50px;*/
-/*    float: left;*/
-/*    background: red;*/
-/*}*/
-/*#footer_icon {*/
-/*    width: 50%;*/
-/*    height: 50px;*/
-/*    line-height: 50px;*/
-/*}*/
-
-/*!*#footer_icon h2{*!*/
-/*!*    float: none;*!*/
-/*!*    font-weight: normal;*!*/
-/*!*    font-size: 20px;*!*/
-/*!*}*!*/
-/*#footer_icon img{*/
-/*    height: 30px;*/
-/*    width: 30px;*/
-/*    border-radius: 5px;*/
-/*}*/
-/*#footer_icon img:hover{*/
-/*    transform: rotate(360deg);*/
-/*    transition: 0.5s;*/
-/*}*/
-/*#footer #footer_nav #footer_nav_division {*/
-/*    list-style: none;*/
-/*}*/
-
-/*#footer #footer_nav #footer_nav_division li {*/
-/*    float: left;*/
-/*    margin-right: 15px;*/
-/*        font-size: 20px;*/
-/*}*/
-
-/*#footer #footer_nav #footer_nav_division li a {*/
-/*    text-decoration: none;*/
-/*    color: green;*/
-/*}*/
-
-/*#footer #footer_nav #footer_nav_division li a:hover {*/
-/*    color: dodgerblue;*/
-/*}*/
-
-/*#footer #footer_content {*/
-/*    float: left;*/
-/*    line-height: 50px;*/
-/*        font-size: 15px;*/
-/*    text-align: center;*/
-/*    height: 50px;*/
-/*    width: 100%;*/
-/*}*/
-/*#footer_content span a {*/
-/*    text-decoration: none;*/
-/*    color: dodgerblue;*/
-/*}*/
-
-/*@media screen and (max-width: 600px) {*/
-/*    #footer {*/
-/*        width: 100%;*/
-/*        height:150px;*/
-/*    }*/
-
-/*    #footer_content {*/
-/*        height: 50px;*/
-/*        float: left;*/
-/*    }*/
-/*    #footer_icon h2{*/
-/*    margin-left:0;*/
-/*}*/
-/*    #footer_nav {*/
-/*        width: 100%;*/
-/*        height: 50px;*/
-/*        float: left;*/
-/*        text-align: center;*/
-/*    }*/
-/*    #footer_icon{*/
-/*        width: 100%;*/
-/*        height: 50px;*/
-/*        float: right;*/
-/*    }*/
-/*    #footer #footer_nav #footer_nav_division li {*/
-/*        float: left;*/
-/*        font-size: 25px;*/
-/*    }*/
-/*}*/
-/*@media screen and (max-width: 1000px) {*/
-/*    #footer {*/
-/*        width: 100%;*/
-/*        height:100px;*/
-/*    }*/
-/*    #footer_content {*/
-/*        height: 50px;*/
-/*        float: none;*/
-
-/*    }*/
-/*#footer #footer_division .f {*/
-/*    width: 50%;*/
-/*    height: 50px;*/
-/*    float: left;*/
-/*}*/
-/*    #footer_nav {*/
-/*        width: 50%;*/
-/*        height: 50px;*/
-/*        text-align: center;*/
-/*    }*/
-/*    #footer_icon{*/
-/*        width: 50%;*/
-/*        height: 50px;*/
-/*        text-align: center;*/
-/*    }*/
-
-/*}*/
 /*footer */
 
 /*for index.html*/
 #body_content {
     width: 100%;
-    height: 600px;
 }
-
 .top_content {
-    height: 200px;
+    height: auto;
 }
-
-/*#content_image {*/
-/*    margin: 0 ;*/
-/*    width: 100px;*/
-/*    height: 60px;*/
-/*}*/
-
 .top_content h1 {
     font-family: cursive;
-    font-size: xx-large;
+    font-size: 40px;
+    color: black;
 }
 
 .top_content p {
     font-family: cursive;
     font-size: x-large;
 }
+/*for small displays*/
+@media screen and (max-width: 670px) {
+     #body_content {
+         height: 300px !important;
+         background-size: cover !important;
+         color: darkblue !important;
+     }
 
+     .top_content h1 {
+         margin: 0 !important;
+         font-size: larger !important;
+     }
+
+     .top_content p {
+         font-size: small !important;
+     }
+ }
 /*index.html*/
 
-@media screen and (max-width: 1260px) {
-    .room_downcontent {
-        width: 100% !important;
-    }
 
-    .room_downcontent .room_description {
-        width: 100% !important;
-        float: left !important;
-    }
-    .room_downcontent .room_image {
-        width: 100% !important;
-        float: right !important;
-    }
-    #table_container{
-        overflow: auto;
-        margin:0;
-        padding: 0;
-        width: 100%;
-    }
-}
 @media screen and (max-width: 600px){
 
-    .customer_table, .room_table, .booking_table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 10px;
-        margin:0;
-    }
     #admin_content{
         width: 100%;
     }
@@ -599,33 +439,7 @@ button.social:hover {
     #admin_body{
         width: 80%;
     }
-    #gmap_canvas {
-        height: 200px; /* The height is 400 pixels */
-        width: 100%;
-        border: 1px solid black;
-        margin-bottom: 5px; /* The width is the width of the web page */
-    }
-
-    .mapouter {
-        width: 200%;
-    }
-    /*.customer_table, .room_table, .booking_table {*/
-    /*    border-collapse: collapse;*/
-    /*    width: auto;*/
-    /*    margin-top: 10px;*/
-    /*    margin-right: auto;*/
-    /*    margin-left: auto;*/
-    /*}*/
-    /*#table_container{*/
-    /*    height: 200px;*/
-    /*}*/
-    #help {
-        margin: 0;
-        width: 100%;
-        background: blue;
-    }
-
-    #room_image img {
+    .room_image img {
         width: 100%;
         height: auto;
     }
@@ -640,7 +454,7 @@ button.social:hover {
     margin-top: 10px;
 }
 }
-/* about page */
+/* about page and privacy page*/
 
 .about_content,#privacy_content {
     width: 80%;
@@ -670,33 +484,6 @@ button.social:hover {
 
 }
 /*about page*/
-.mapouter {
-    height: auto;
-    width: 50%;
-}
-
-.gmap_canvas {
-    overflow: hidden;
-    height: auto;
-    width: 100%;
-}
-
-#help {
-    margin: 0 auto;
-    background: red;
-}
-
-#help textarea, #help input[type='email'] {
-    display: block;
-    box-sizing: border-box;
-    margin: 0 auto;
-    width: 100%;
-    height: 25px;
-    border-radius: 5px;
-    border: 1px solid black;
-    background: white;
-    color: black;
-}
 
 /*for admin*/
 
@@ -709,20 +496,26 @@ button.social:hover {
     float: left;
     width: 10%;
     height: 100%;
-    background: whitesmoke;
+    background: #2F2F31;
     margin: 0;
     padding: 0;
 }
 
-#sidebar h3 a {
+#sidebar h3 a  {
     padding: 0;
     text-decoration: none;
-    font-size: inherit;
+    font-size: x-large;
+    color:wheat;
+}
+#sidebar a {
+    padding: 0;
+    text-decoration: none;
+    font-size: small;
 }
 
 #sidebar a, h3 {
     display: block;
-    color: black;
+    color: white;
     padding: 16px;
     text-decoration: none;
     font-size: x-large;
@@ -736,19 +529,7 @@ button.social:hover {
     float: left;
     width: 90%;
     height: 100%;
-    background: wheat;
-}
-
-#searchbar_room, #searchbar_customer, #searchbar_booking {
-    width: 25%;
-    margin-top: 5px;
-    margin-left: 35%;
-    border: 0.5px solid black;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    font-size: larger;
-    height: 30px;
-    float: left;
+    background-image: linear-gradient(gray,dimgray,gray);
 }
 
 #prev {
@@ -756,6 +537,8 @@ button.social:hover {
     text-align: center;
     width: 1px;
     height: auto;
+    background: black;
+    color: white;
 }
 
 #next {
@@ -764,6 +547,8 @@ button.social:hover {
     text-align: center;
     width: 1px;
     height: auto;
+    background: black;
+    color: white;
 }
 @media screen and (max-width: 1340px){
     #sidebar{
@@ -786,18 +571,7 @@ button.social:hover {
         width: 100%!important;
     }
 }
-/*#customer_search,*/
-/*#room_search,*/
-/*#booking_search {*/
-/*    float: left;*/
-/*    width: 5%;*/
-/*    margin-top: 5px;*/
-/*    height: 30px;*/
-/*    padding: 0;*/
-/*    margin-left: 5px;*/
-/*}*/
 #table_container{
-    /*margin-top: 40px;*/
     margin-left: auto;
     overflow: auto;
     margin-right: auto;
@@ -805,28 +579,31 @@ button.social:hover {
 }
 .customer_table, .room_table, .booking_table {
     border-collapse: collapse;
-    width: 50%;
+    width: 95%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+.table_head{
+    font-weight: bolder;
 }
 .table_head,
 td {
     font-family: sans-serif;
     text-align: left;
-    border: 0.1px solid white;
+    font-weight: bold;
+    border: 0.1px solid black;
 }
 
 .table_head tr .imageholder {
-    width: 25%;
+    width: 12%;
     margin: 0;
     padding: 0;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: wheat;
 }
-
 .table_head {
     background-color: #4CAF50;
     height: 30px;
@@ -835,30 +612,22 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-.customer_table .table_head .adding_customer img,
 .room_table .table_head .adding_room img,
-.booking_table .table_head .adding_booking img,
-.customer_table .Deleting_Customer img,
-.customer_table .updating_customer img,
 .room_table .Deleting_room img,
 .room_table .updating_room img,
-.booking_table .updating_customer_booking img,
-.booking_table .deleting_Booking img {
+.booking_table .Deleting_booking img {
     height: 25px;
     margin: 0;
     padding: 0;
     width: 25px;
 }
 
-.customer_table .adding_customer a img:hover,
-.room_table .adding_room a img:hover,
-.booking_table .adding_booking a img:hover {
+.room_table .adding_room a img:hover {
     cursor: pointer;
 }
 
-.customer_table .Deleting_Customer,
 .room_table .Deleting_room,
-.booking_table .deleting_Booking {
+.booking_table .Deleting_booking {
     margin: 0;
     padding: 0;
     background: transparent;
@@ -867,19 +636,41 @@ tr:nth-child(even) {
 }
 
 /*for room customer edit update and table*/
-#customer_form, #room_form {
+ #room_form {
     width: 350px;
-    height: 450px;
-    background: red;
+    height: 500px;
+    background-image: linear-gradient(#00467F,#A5CC82);
     border: 1px solid black;
     border-radius: 5px;
     margin: 0 auto;
 }
 
-#customer_form input[type=text],
-#room_form input[type=text],
+#customer_form {
+    width: 350px;
+    height: 360px;
+    background-image: linear-gradient(gray,grey);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+#customer_form label{
+    width: 100%;
+    font-size: x-large;
+}
 #customer_form input[type=email],
 #customer_form input[type=password],
+#customer_form input[type=text]{
+ display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 250px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: white;
+    color: black;
+}
+#room_form input[type=text],
 #room_form input[type=file],
 #room_form select {
     display: block;
@@ -898,18 +689,29 @@ tr:nth-child(even) {
     box-sizing: border-box;
     margin: 0 auto;
     width: 250px;
-    height: 32px;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid black;
     background: white;
     color: black;
 }
-
-#customer_form button,
+/*customer form in dashboard*/
+#customer_form button{
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid black;
+    float: left;
+    background: green;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
 #room_form button {
     display: block;
     box-sizing: border-box;
-    width: 110px;
+    width: 33.3%;
     border-radius: 5px;
     border: 1px solid black;
     float: left;
@@ -917,7 +719,6 @@ tr:nth-child(even) {
     margin-top: 10px;
 }
 
-#customer_form button a,
 #room_form button a {
     text-decoration: none;
     color: white;
@@ -933,34 +734,12 @@ tr:nth-child(even) {
     background: wheat;
     color: black;
 }
-
-#find_room {
-    width: 100%;
-}
-
-#type_room {
-    width: 25%;
-    height: 40px;
-    font-size: larger;
-    margin-top: 5px;
-    margin-left: 34%;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-#find_your_room {
-    width: 5%;
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
-    padding: 0;
-}
-
+/*room page*/
 #room_container {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    background: whitesmoke;
+
 }
 .room_topcontent{
     width: 100%;
@@ -988,17 +767,62 @@ tr:nth-child(even) {
     float: right;
 
 }
-/*.room_details{*/
-/*    width:100%;*/
-/*    background: blue;*/
-/*}*/
-/*#room_container #bookButton {*/
-/*    width: 25%;*/
-/*    background-color: dodgerblue;*/
-/*    border-radius: 5px;*/
-/*}*/
+#booking_form input[type=text],
+#booking_form input[type=date]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+/*booking form*/
+#booking_form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: black;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/*room booking */
+#room_booking {
+ margin: 2% auto 0 auto;
+ border: 1px solid #888;
+ width: 300px;
+ background: whitesmoke;
+ background-image: linear-gradient(#acb6e5,#86fde8);
+}
+/*for small displays*/
+@media screen and (max-width: 1260px) {
+    .room_image img{
+        height: 100% !important;
+    }
+    .room_downcontent {
+        width: 100% !important;
+    }
 
-/*#room_container #bookButton:hover {*/
-/*    background: wheat;*/
-/*    color: black;*/
-/*}*/
+    .room_downcontent .room_description {
+        width: 100% !important;
+        float: left !important;
+    }
+    .room_downcontent .room_image {
+        width: 100% !important;
+        height: 50% !important;
+        float: right !important;
+    }
+    /*for admin dashboard table*/
+    #table_container{
+        overflow: auto;
+        margin:0;
+        padding: 0;
+        width: 100%;
+    }
+}
+/*room page*/

@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'Booking_System.wsgi.application'
 
 DATABASES = {
     'default': {
+        #my sql as database engine
         'ENGINE': 'django.db.backends.mysql',
+        #name of database
         'NAME': 'dbbookingsystem',
+        #user of database
         'USER':'root',
+        #password
         'PASSWORD':'',
+        #local host address and port specified for loading the web page
         'HOST':'127.0.0.1',
         'PORT':'3306'
     }
@@ -121,5 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#directory to save the room image
 MEDIA_URL = '/my_booking_app/static/images/admin_images/room_images/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'my_booking_app/static/images/admin_images/room_images')

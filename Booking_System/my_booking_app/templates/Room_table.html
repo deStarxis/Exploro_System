@@ -1,56 +1,65 @@
+{# room table #}
 {% extends "admin.html" %}
 {% block content %}
-{#    <input type="text" id=searchbar_room placeholder="Search Room By Price">#}
-{#     <button id="room_search">Search</button>#}
+    {# room table starts from here #}
     <div id="table_container">
-<table class="room_table" style="overflow: paged-y">
-    <thead class="table_head">
-        <tr>
-            <td>ID</td>
-            <td class="imageholder">Image</td>
-            <td>Room Type</td>
-            <td>Location</td>
-            <td>Price</td>
-            <td>Description</td>
-            <td class="adding_room">
-                <a href="{% url 'room_insert' %}">
-                     {% load static %}
-                        <img src="{% static 'images/admin_images/Room.png' %}" title="Adding new Room">
-                </a>
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for room in room_list %}
+        {# defining all the data of the room to make it visible in the room table #}
+        <table class="room_table" style="overflow: paged-y">
+            <thead class="table_head">
             <tr>
-                <td>{{ room.Room_ID}}</td>
-               {% load static %}
-                <td ><img height="100px" width="150px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}"></td>
-                <td>{{room.Room_Type}}</td>
-                <td>{{room.Location}}</td>
-                <td>{{ room.Price}}</td>
-                <td>{{ room.Description }}</td>
-                <td>
-                    <a href="{% url 'room_update' room.Room_ID %}" class="updating_room">
+                <td>ID</td>
+                <td class="imageholder">Image</td>
+                <td>Room Type</td>
+                <td>Location</td>
+                <td>Price</td>
+                <td>Description</td>
+                {# for inserting new room into the database #}
+                <td class="adding_room">
+                    <a href="{% url 'room_insert' %}">
                         {% load static %}
-                        <img src="{% static 'images/admin_images/Update.png' %}" title="Updating Room Details">
+                        <img src="{% static 'images/admin_images/Room.png' %}" title="Adding new Room">
                     </a>
-                    <form action="{% url 'room_delete' room.Room_ID  %}" method="post" >
-                        {% csrf_token %}
-                        <button type="submit" class="Deleting_room">
-                            {% load static %}
-                        <img src="{% static 'images/admin_images/Delete.png' %}" title="Deleting Room Details">
-                        </button>
-                    </form>
                 </td>
             </tr>
-        {% endfor %}
-    </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {# fetching all the data from database #}
+            {% for room in room_list %}
+                <tr>
+                    <td>{{ room.Room_ID}}</td>
+                    {% load static %}
+                    <td ><img height="100px" width="150px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}"></td>
+                    <td>{{room.Room_Type}}</td>
+                    <td>{{room.Location}}</td>
+                    <td>{{ room.Price}}</td>
+                    <td>{{ room.Description }}</td>
+                    <td>
+                        {# for redirectin to update form for the selected room #}
+                        <a href="{% url 'room_update' room.Room_ID %}" class="updating_room">
+                            {% load static %}
+                            <img src="{% static 'images/admin_images/Update.png' %}" title="Updating Room Details">
+                        </a>
+                        {# for deleting the selected room #}
+                        <form action="{% url 'room_delete' room.Room_ID  %}" method="post" >
+                            {% csrf_token %}
+                            <button type="submit" class="Deleting_room">
+                                {% load static %}
+                                <img src="{% static 'images/admin_images/Delete.png' %}" title="Deleting Room Details">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
+    {# for pagination #}
     <form method="post" action="/adminpage/room_record/">
-    {% csrf_token %}
-    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
-    <button type="submit" name="next" value="next" id="next">&gt;</button>
+        {% csrf_token %}
+        {# for previous button #}
+        <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+        {# for next button #}
+        <button type="submit" name="next" value="next" id="next">&gt;</button>
     </form>
+    {# room table ends here #}
 {% endblock %}

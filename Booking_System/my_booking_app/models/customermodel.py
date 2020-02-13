@@ -1,4 +1,5 @@
 from django.db import models
+
 #customer table
 class Customer(models.Model):
     ID = models.AutoField(auto_created=True, primary_key=True)
@@ -9,3 +10,5 @@ class Customer(models.Model):
 
     class Meta:
         db_table = "customer"
+
+

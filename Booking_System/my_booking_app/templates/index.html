@@ -1,14 +1,17 @@
+{# home page #}
 {% extends 'pagelayout.html' %}
+{# for static files #}
 {% load static %}
 {% block content %}
+    {# home page starts from here #}
     <div id="body_content"
-         style="background: url({% static 'images/background/index_background.jpg' %});background-size: cover;">
+         style="background: url({% static 'images/background/background.jpg' %});background-size: cover;height: 800px;">
         <div class="top_content">
-            {#            <img src="{% static 'images/Logo.png' %}" id="content_image">#}
             <h1>Find your ideal <span style="color: dodgerblue">Hotel</span> <span style="color: orangered">Room</span>
             </h1>
-            <h1 style="margin-left: 10%;margin-top: 1%;">around Kathmandu Valley over here!!</h1>
+            <h1 style="margin-left: 15%;margin-top: 1%;">around <span style="color: green"> Kathmandu Valley </span>over here!!</h1>
             <p style="margin-top: 5%;">We offer rooms at ridiculously <span style="color: blue">low price</span>!!</p>
         </div>
     </div>
+    {# home page ends here #}
 {% endblock %}

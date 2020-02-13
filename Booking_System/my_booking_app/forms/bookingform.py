@@ -1,5 +1,5 @@
 from django import forms
-from my_booking_app.models.booking import Booking
+from my_booking_app.models.bookingmodel import Booking
 
 # Booking made by Customer
 class Booking_Form(forms.ModelForm):

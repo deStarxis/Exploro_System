@@ -1,3 +1,4 @@
-from . import customer
-from . import room
-from . import  booking
+#importing all the models
+from . import customermodel
+from . import roommodel
+from . import  bookingmodel

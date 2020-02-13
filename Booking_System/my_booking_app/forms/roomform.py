@@ -1,5 +1,5 @@
 from django import forms
-from my_booking_app.models.room import Room
+from my_booking_app.models.roommodel import Room
 
 # Room
 class Room_Details(forms.ModelForm):

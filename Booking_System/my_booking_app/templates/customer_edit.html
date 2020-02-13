@@ -1,18 +1,31 @@
+{# customer edit page #}
 {% extends 'customer_dashboard.html' %}
 {% load static %}
 {% block content %}
-<form action="/customer_update/{{ customer.ID }}" method="post" enctype="multipart/form-data" id="customer_form">
-        {% csrf_token %}
-        <label>Name</label><input type="text" name="Fullname"value="{{ customer.Fullname }}" >
-        <label>Email</label><input name="Email" type="text" value="{{ customer.Email }}">
-        <label>Mobile</label><input type="text" name="Mobile"value="{{ customer.Mobile }}" >
-     <label>Password</label><input type="text" name="Password" value="{{ customer.Password }}">
-        <button type="submit" id="submitbutton">
-           Submit
-        </button>
-        <button type="reset" id="resetbutton">
-            Reset
-        </button>
-       
-    </form>
+    {# customer edit page starts from here #}
+    <div id="customer_edit_container" style="height: 550px;background-image: linear-gradient(wheat,whitesmoke,wheat);;margin-left: auto;margin-right: auto;">
+        <h1>Editing My Details</h1>
+        {# for editing all the details of the customer #}
+        <form action="/customer_update/{{ customer.ID }}" method="post" enctype="multipart/form-data" id="customer_form">
+            {% csrf_token %}
+            <label for="Customer Name"><b>Name</b></label>
+            <input type="text" id="FullName_Edit" name="Fullname"value="{{ customer.Fullname }}" >
+            <label for="Customer Email"><b>Email</b></label>
+            <input name="Email" id="Email_Edit" type="email" value="{{ customer.Email }}">
+            <label for="Customer Mobile"><b>Mobile</b></label>
+            <input type="text" id="Mobile_Edit" name="Mobile"value="{{ customer.Mobile }}" >
+            <label for="Customer Password"><b>Password</b></label>
+            <input type="text" id="Password_Edit" name="Password" value="{{ customer.Password }}">
+            {# submit button #}
+            <button type="submit" id="submitbutton">
+                Submit
+            </button>
+            <button type="reset" id="resetbutton" style="background: brown;">
+                Reset
+            </button>
+            {# for going to customer dashboard without updating the details #}
+            <a href="/dashboard/'{{ customer.ID }}'" style="text-decoration: none;background:none;font-size:x-large;color: black;margin-left: auto;margin-right: auto;">Back To My Dashboard</a>
+        </form>
+    </div>
+    {# customer edit page ends here. #}
 {% endblock %}

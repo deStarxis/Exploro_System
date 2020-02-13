@@ -1,3 +1,4 @@
+{# admin page  #}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -8,10 +9,9 @@
     <link rel="icon" href="{% static 'images/ICON_TITLE.jpg' %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <link rel="icon" href="images/ICON_TITLE.jpg">
     <link href={% static 'css/style.css' %} type="text/css" rel="stylesheet">
-     <script src="https://kit.fontawesome.com/8bc8d54818.js"></script>
 </head>
 <body>
     <div id="header">
@@ -19,13 +19,15 @@
         <div id="header-nav">
             <a href={% url 'index' %}>Home</a>
             <a href={% url 'room' %}>Rooms</a>
-            <a href={% url 'help' %}>Help</a>
             <a href={% url 'about' %}>About</a>
+            {# logout button for admin #}
             <a href="{% url 'logout' %}" style="float: none;margin: 0">
             <input type="submit" value="Logout"/></a>
         </div>
     </div>
+    {# admin content goes here #}
     <div id="admin_content">
+    {# admin page navigation bar #}
        <div id="sidebar">
            <h3 style="font-size: xx-large"><a href="{% url 'admin_page' %}">Records</a></h3>
           <a  class="customer" href="{% url 'customer_table' %}">Customer</a>
@@ -34,21 +36,28 @@
        </div>
         <div id="admin_body">
         {% block content %}
+            {# for displaying all the records in total #}
+            <div id="all_details" style="text-align: center;">
+            {# customer details #}
             <h1>Total no of customers</h1>
-{#            {% for customers in customers %}#}
-{#            <p>{{ customers.ID }}</p>#}
-{#            {% endfor %}#}
+            {% for customers in customers %}
+            <h2>{{ customers.ID }}</h2>
+            {% endfor %}
+            {# room details #}
             <h1>Total no of Rooms registered</h1>
-{#            {% for rooms in rooms %}#}
-{#            <p>{{ rooms.Room_ID }}</p>#}
-{#            {% endfor %}#}
+            {% for rooms in rooms %}
+            <h2>{{ rooms.Room_ID }}</h2>
+            {% endfor %}
+            {# booking details #}
             <h1>Total no of Bookings Done</h1>
-{#            {% for bookings in bookings %}#}
-{#            <p>{{ bookings.Booking_ID }}</p>#}
-{#            {% endfor %}#}
+            {% for bookings in bookings %}
+            <h2>{{ bookings.Booking_ID }}</h2>
+            {% endfor %}
+            </div>
         {% endblock %}
         </div>
     </div>
+    {# footer for admin page #}
    <div id="footer">
     <div id="footer_nav">
         <ul>
@@ -59,12 +68,8 @@
     <div id="footer_content">
         <p>Copyright 2019, <span><a href="{% url 'index' %}">exploro</a></span> System. All Rights Reserved.</p>
     </div>
-
-    {#        <div id="footer_icon">#}
-    {#            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>#}
-    {#            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>#}
-    {#            <a href="https://www.google.com/" target="_blank"><i class="fab fa-blog"></i></a> </div>#}
-</div>
+   </div>
+    {# linking javascript file #}
     <script src="{% static 'js/main.js' %}">
     </script>
 </body>

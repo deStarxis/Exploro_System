@@ -1,14 +1,18 @@
+{# room edit page  #}
 {% extends 'Room_table.html' %}
 {% load static %}
-
 {% block content %}
+    {# room edit page starts from here #}
+    {# form to display the data of the selected room that is to be updated #}
     <form action="/adminpage/room_update/{{ room.Room_ID }}/" method="post" enctype="multipart/form-data"
           id="room_form">
-        {# <form action="/adminpage/customer_update/{{ customer.ID }}/" method="post" enctype="multipart/form-data">#}
         {% csrf_token %}
+        {# image #}
+        <label><b>Room Image</b></label>
         <img width="100px" src="{% static '/images/admin_images/room_images/' %}{{ room.Room_Image }}">
         <input type="file" name="Room_Image" value="{{ room.Room_Image }}">
-        <label>Room Type</label>
+        <label><b>Room Type</b></label>
+        {# type of room #}
         <select id="roomtype" name="Room_Type">
             <option value="Single Room">Single Room</option>
             <option value="Double Room">Double Room</option>
@@ -27,6 +31,7 @@
             <option value="King Bedroom">King Bedroom</option>
             <option value="Queen Bedroom">Queen Room</option>
         </select>
+        {# script for selecting the option for room type from combo box #}
         <script>
             $(document).ready(()=>{
                 var selectedval="{{ room.Room_Type }}";
@@ -39,23 +44,24 @@
                 }
             })
         </script>
-        <label>Location</label><textarea name="Location">{{ room.Location }} </textarea>
-        <label>Price</label><input name="Price" type="text" value={{ room.Price }}>
-        <label>Description</label><textarea name="Description" style="height: 60px;">{{ room.Description }} </textarea>
+        {# location #}
+        <label><b>Location</b></label><textarea name="Location" style="height: 60px;">{{ room.Location }} </textarea>
+        {# price #}
+        <label><b>Price</b></label><input name="Price" type="text" value={{ room.Price }}>
+        {# description #}
+        <label><b>Description</b></label><textarea name="Description" style="height: 100px;">{{ room.Description }} </textarea>
+        {# submit button #}
         <button type="submit" id="submitbutton">
-            {#                     {% load static %}#}
-            {#                    <img src={% static 'images/Database Icon.png' %}>#}
             Submit
         </button>
+        {# reset button #}
         <button type="reset" id="resetbutton">
-            {#              {% load static %}#}
-            {#                    <img src={% static 'used_images/Reset.jpg' %}>#}
             Reset
         </button>
+        {# button for redirecting back to room table #}
         <button id="listButton" type="button"><a href="{% url 'room_table' %}">
-            {#                    {% load static %}#}
-            {#                    <img src={% static 'used_images/List.png' %}>#}
             Back To Table
         </a></button>
     </form>
+    {# room edit page ends here #}
 {% endblock content %}

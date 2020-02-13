@@ -1,67 +1,35 @@
+{# customer table  #}
 {% extends "admin.html" %}
 {% load static %}
 {% block content %}
-{#<script src="{% static 'js/jquery.min.js' %}"></script>#}
-{#<input type="text" id=searchbar_customer placeholder="Search Customer By Email">#}
-{#<button id="customer_search">Search</button>#}
+    {# customer table starts from here #}
     <div id="table_container">
-<table class="customer_table">
-    <tr class="table_head">
-        <td>ID</td>
-        <td>Full Name</td>
-        <td>Email</td>
-        <td>Password</td>
-        <td>Mobile</td>
-    </tr>
-    {% for customer in customer_list %}
-    <tr>
-        <td>{{ customer.ID }}</td>
-        <td>{{customer.Fullname}}</td>
-        <td>{{customer.Email}}</td>
-        <td>{{customer.Password}}</td>
-        <td>{{ customer.Mobile }}</td>
-    </tr>
-    {% endfor %}
-</table>
+        {# defining all the data of customer that are to be visible by admin #}
+        <table class="customer_table">
+            <tr class="table_head">
+                <td>ID</td>
+                <td>Full Name</td>
+                <td>Email</td>
+                <td>Mobile</td>
+            </tr>
+            {# fetching all the required data of the customer from database to customer table #}
+            {% for customer in customer_list %}
+                <tr>
+                    <td>{{ customer.ID }}</td>
+                    <td>{{customer.Fullname}}</td>
+                    <td>{{customer.Email}}</td>
+                    <td>{{ customer.Mobile }}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
-     <form method="post" action="/adminpage/customer_record/">
-    {% csrf_token %}
-    <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
-    <button type="submit" name="next" value="next" id="next">&gt;</button>
+    {# for pagination #}
+    <form method="post" action="/adminpage/customer_record/">
+        {% csrf_token %}
+        {# previous button #}
+        <button type="submit" name="prev" value="prev" id="prev" >&lt;</button>
+        {# next button #}
+        <button type="submit" name="next" value="next" id="next">&gt;</button>
     </form>
-<script>
-    $(document).ready(() => {
-        $("#sidebar").find(".customer").removeClass("customer");
-        $("#customer_search").click(() => {
-            $.ajax({
-                data: {
-                    search: $("#searchbar_customer").val()
-                },
-                url: '/adminpage/customersearch',
-                method: 'GET',
-                success: function(data) {
-                    console.log(data)
-                    $("tr").not("tr:first").remove();
-                    let html = "";
-                    for (customer of data) {
-                        html += "<tr>";
-                        html += "<td>" + customer.ID + "</td>";
-                        html += "<td>" + customer.Fullname + "</td>";
-                        html += "<td>" + customer.Email + "</td>";
-                        html += "<td>" + customer.Password + "</td>";
-                        html += "<td>" + customer.Mobile + "</td>";
-                        html += "</tr>";
-                        $(".customer_table").append(html);
-                    }
-                },
-                error: function(error) {
-                    console.log(error)
-                },
-                complete: function() {
-                    console.log("complete")
-                }
-            })
-        })
-    })
-</script>
+    {# customer table page ends here #}
 {% endblock %}
