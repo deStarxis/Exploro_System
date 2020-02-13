@@ -217,6 +217,7 @@
       <workItem from="1581474887997" duration="44000" />
       <workItem from="1581474960213" duration="1076000" />
       <workItem from="1581557829413" duration="23000" />
+      <workItem from="1581567252009" duration="612000" />
     </task>
     <servers />
   </component>
@@ -232,10 +233,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1579502407521" />
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1581474963068">
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1581567310245">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581474963068" />
+    <state x="379" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581567310245" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581398722826">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
